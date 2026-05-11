@@ -1,0 +1,13 @@
+{
+  "stats": [
+    { "icon": "🏪", "value": "[X]+", "label": "Brands Trained" },
+    { "icon": "🎓", "value": "24+", "label": "Hours of Content" },
+    { "icon": "🤖", "value": "5", "label": "AI Skills Taught" },
+    { "icon": "⭐", "value": "4.9 ★", "label": "Avg. Rating" }
+  ],
+  "samples": [
+    { "image": "", "caption": "AI Sample 1" },
+    { "image": "", "caption": "AI Sample 2" },
+    { "image": "", "caption": "AI Sample 3" }
+  ]
+}

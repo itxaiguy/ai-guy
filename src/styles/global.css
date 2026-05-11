@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-red: #cc1a1a;
+  --color-brand-pink: #ff1f5e;
+  --color-brand-teal: #00d4b4;
+  --color-brand-dark: #0a0a0a;
+  --color-brand-card: #111111;
+  --color-brand-border: #1e1e1e;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #0a0a0a;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Oswald', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    display: inline-block;
+    background-color: #ff1f5e;
+    color: white;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: background-color 0.2s;
+    text-align: center;
+    cursor: pointer;
+  }
+  .btn-primary:hover {
+    background-color: #e01050;
+  }
+  .btn-red {
+    display: inline-block;
+    background-color: #cc1a1a;
+    color: white;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: background-color 0.2s;
+    text-align: center;
+    cursor: pointer;
+  }
+  .btn-red:hover {
+    background-color: #b01515;
+  }
+  .section-tag {
+    display: inline-block;
+    background-color: #cc1a1a;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0.25rem 1rem;
+    border-radius: 9999px;
+    margin-bottom: 0.75rem;
+  }
+  .card-dark {
+    background-color: #111111;
+    border: 1px solid #1e1e1e;
+    border-radius: 1rem;
+    padding: 1.25rem;
+  }
+}

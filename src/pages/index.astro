@@ -1,0 +1,88 @@
+---
+import '../styles/global.css';
+import AnnouncementBar from '../components/AnnouncementBar.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import ProofBar from '../components/ProofBar.astro';
+import PainSection from '../components/PainSection.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import OldVsNew from '../components/OldVsNew.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Modules from '../components/Modules.astro';
+import Testimonials from '../components/Testimonials.astro';
+import IsThisForYou from '../components/IsThisForYou.astro';
+import Community from '../components/Community.astro';
+import Bonuses from '../components/Bonuses.astro';
+import Pricing from '../components/Pricing.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
+import StickyBottomCTA from '../components/StickyBottomCTA.astro';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pakistan's #1 AI Content Creation Mentorship. Learn AI product photography, videos, influencers, voice cloning & avatars. Replace costly shoots with AI." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>AI Guy — Pakistan's #1 AI Content Creation Mentorship</title>
+    <!-- Netlify Identity (required for CMS login redirect) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body>
+    <!-- 1. Sticky announcement ticker -->
+    <AnnouncementBar />
+    <!-- 2. Sticky navbar -->
+    <Navbar />
+
+    <main>
+      <!-- 3. Hero -->
+      <Hero />
+      <!-- 4. Social Proof Bar -->
+      <ProofBar />
+      <!-- 5. Pain — cost of traditional content -->
+      <PainSection />
+      <!-- 6. Services — 5 AI skills -->
+      <ServicesGrid />
+      <!-- 7. Old Way vs New Way -->
+      <OldVsNew />
+      <!-- 8. How the Mentorship Works -->
+      <HowItWorks />
+      <!-- 10. Course Modules -->
+      <Modules />
+      <!-- 11. Testimonials -->
+      <Testimonials />
+      <!-- 12. Who Is This For? -->
+      <IsThisForYou />
+      <!-- 13. Community -->
+      <Community />
+      <!-- 14. What's Included / Bonuses -->
+      <Bonuses />
+      <!-- 15. Pricing + Countdown -->
+      <Pricing />
+      <!-- 16. FAQ -->
+      <FAQ />
+    </main>
+
+    <!-- 17. Footer -->
+    <Footer />
+    <!-- 18. Sticky Bottom CTA -->
+    <StickyBottomCTA />
+
+    <!-- Netlify Identity redirect handler -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', (user: unknown) => {
+          if (!user) {
+            window.netlifyIdentity.on('login', () => {
+              document.location.href = '/admin/';
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

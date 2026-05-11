@@ -1,0 +1,21 @@
+{
+  "headline": "YOU'RE NOT ALONE — WE'VE GOT YOUR BACK",
+  "desc": "Beyond the lectures and calls, you get access to a private Discord community of brands, marketers, and creators all learning and building together. Ask questions, share results, get feedback — anytime.",
+  "stats": [
+    { "value": "[X]+", "label": "Active Members" },
+    { "value": "24/7", "label": "Chat Support" },
+    { "value": "Weekly", "label": "Live 1-on-1 Calls" }
+  ],
+  "features": [
+    "Direct access to the coach between calls",
+    "Feedback on your AI content and campaigns",
+    "Early access to new tools and updates",
+    "Peer accountability with other members",
+    "Resource sharing — prompts, tools, templates"
+  ],
+  "samples": [
+    { "image": "" },
+    { "image": "" },
+    { "image": "" }
+  ]
+}

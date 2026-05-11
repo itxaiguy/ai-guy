@@ -1,0 +1,53 @@
+---
+import data from '../content/testimonials.json';
+---
+<section id="testimonials" class="py-14 bg-[#0d0d0d]">
+  <div class="max-w-lg mx-auto px-4">
+    <div class="text-center mb-10">
+      <div class="section-tag">⭐ Success Stories</div>
+      <h2 class="font-['Oswald'] text-3xl font-bold uppercase text-white mt-2">
+        WHAT OUR MEMBERS<br/><span class="text-[#ff1f5e]">ARE SAYING</span>
+      </h2>
+      <p class="text-gray-400 text-sm mt-2">Ecom brands, marketers, and freelancers transforming their content with AI.</p>
+    </div>
+
+    <!-- Featured coach quote -->
+    <div class="card-dark mb-5 flex flex-col items-center text-center p-6 border-[#ff1f5e]/20">
+      <div class="w-24 h-24 rounded-full overflow-hidden bg-[#1a1a1a] border-2 border-[#ff1f5e] mb-3 flex items-center justify-center">
+        {data.coach_photo
+          ? <img src={data.coach_photo} alt={data.coach_name} class="w-full h-full object-cover" />
+          : <span class="text-4xl">👤</span>
+        }
+      </div>
+      <p class="text-gray-300 italic text-sm leading-relaxed mb-3">"{data.coach_quote}"</p>
+      <p class="font-['Oswald'] font-bold text-white text-lg">{data.coach_name}</p>
+      <p class="text-[#00d4b4] text-xs">{data.coach_role}</p>
+    </div>
+
+    <!-- Student testimonials -->
+    <div class="space-y-3">
+      {data.testimonials.map(t => (
+        <div class="card-dark">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-[#1a1a1a] border border-[#2e2e2e] flex items-center justify-center text-lg shrink-0 overflow-hidden">
+              {t.photo ? <img src={t.photo} alt={t.name} class="w-full h-full object-cover" /> : '👤'}
+            </div>
+            <div>
+              <p class="font-bold text-white text-sm">{t.name}</p>
+              <p class="text-gray-500 text-xs">{t.role}</p>
+            </div>
+            <div class="ml-auto bg-[#00d4b4]/10 text-[#00d4b4] text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap">
+              {t.result}
+            </div>
+          </div>
+          <div class="flex text-[#f59e0b] text-xs mb-2">{'★'.repeat(t.stars)}</div>
+          <p class="text-gray-400 text-sm leading-relaxed italic">"{t.text}"</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="#pricing" class="btn-primary w-full block text-xl py-5">JOIN THEM — ENROLL TODAY →</a>
+    </div>
+  </div>
+</section>

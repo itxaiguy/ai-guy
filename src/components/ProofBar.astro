@@ -1,0 +1,34 @@
+---
+import data from '../content/proofbar.json';
+---
+<section class="bg-[#0d0d0d] border-y border-[#1e1e1e] py-6 overflow-hidden">
+  <div class="max-w-lg mx-auto px-4">
+    <p class="text-center text-gray-500 text-xs uppercase tracking-widest mb-4">Why brands & marketers choose AI Guy</p>
+    <div class="grid grid-cols-2 gap-3">
+      {data.stats.map(p => (
+        <div class="card-dark text-center py-4">
+          <div class="text-2xl mb-1">{p.icon}</div>
+          <div class="text-[#00d4b4] font-['Oswald'] text-2xl font-bold">{p.value}</div>
+          <div class="text-gray-400 text-xs mt-1">{p.label}</div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-5 grid grid-cols-3 gap-2">
+      {data.samples.map((s, i) => (
+        s.image ? (
+          <div class="rounded-xl overflow-hidden aspect-square">
+            <img src={s.image} alt={s.caption || `Sample ${i+1}`} class="w-full h-full object-cover" />
+          </div>
+        ) : (
+          <div class="bg-[#111] border border-[#1e1e1e] rounded-xl overflow-hidden aspect-square flex flex-col items-center justify-center text-gray-600">
+            <div class="text-2xl opacity-60 mb-1">🖼️</div>
+            <span class="text-xs text-gray-600">AI Sample {i+1}</span>
+            <span class="text-[10px] text-gray-700">[CMS]</span>
+          </div>
+        )
+      ))}
+    </div>
+    <p class="text-center text-gray-600 text-[10px] mt-2">[Upload real AI content samples via CMS]</p>
+  </div>
+</section>

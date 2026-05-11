@@ -1,0 +1,103 @@
+---
+const services = [
+  {
+    icon: "🖼️",
+    title: "AI Product Photography",
+    desc: "Create studio-quality product shots for any background, angle, or setting — without a camera, studio, or photographer.",
+    color: "#ff1f5e",
+    tags: ["Ecom Listings", "Ads", "Catalogues"],
+  },
+  {
+    icon: "🎬",
+    title: "AI Brand Videos",
+    desc: "Produce professional video ads and brand content with no camera crew, no location booking, and no post-production delays.",
+    color: "#f59e0b",
+    tags: ["Reels", "TikTok Ads", "YouTube"],
+  },
+  {
+    icon: "👤",
+    title: "AI Influencers",
+    desc: "Create your own branded AI influencer who promotes your products consistently — no DMs, no negotiations, no per-post fees.",
+    color: "#00d4b4",
+    tags: ["UGC Content", "Brand Ambassadors", "Reviews"],
+  },
+  {
+    icon: "🎙️",
+    title: "AI Voice Cloning",
+    desc: "Generate studio-quality voiceovers in any language or tone — for ads, product demos, or brand videos — in seconds.",
+    color: "#a855f7",
+    tags: ["Ads", "Demos", "Multilingual"],
+  },
+  {
+    icon: "🤖",
+    title: "AI Avatars",
+    desc: "Put a realistic human face on your brand without hiring a model. Perfect for talking-head videos, explainers, and ads.",
+    color: "#3b82f6",
+    tags: ["Explainers", "Spokesperson", "Video Ads"],
+  },
+];
+---
+<section class="py-14 bg-[#0d0d0d]">
+  <div class="max-w-lg mx-auto px-4">
+    <div class="text-center mb-10">
+      <div class="section-tag">🤖 What You'll Master</div>
+      <h2 class="font-['Oswald'] text-3xl font-bold uppercase text-white mt-2">
+        5 AI SKILLS THAT<br/>
+        <span class="text-[#ff1f5e]">REPLACE YOUR ENTIRE</span><br/>
+        CONTENT TEAM
+      </h2>
+      <p class="text-gray-400 text-sm mt-3">
+        One mentorship. Five game-changing skills. For brands, freelancers & individual creators.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {services.map((s, i) => (
+        <div class="card-dark relative overflow-hidden group hover:border-opacity-60 transition-all duration-300" style={`border-color: ${s.color}25;`}>
+          <!-- Left accent bar -->
+          <div class="absolute top-0 left-0 w-1 h-full rounded-l-xl" style={`background: ${s.color};`}></div>
+
+          <div class="pl-4">
+            <!-- Header -->
+            <div class="flex items-start gap-3 mb-3">
+              <div
+                class="w-11 h-11 rounded-xl flex items-center justify-center text-xl shrink-0"
+                style={`background: ${s.color}15; border: 1px solid ${s.color}30;`}
+              >
+                {s.icon}
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold uppercase tracking-widest" style={`color: ${s.color};`}>Skill 0{i + 1}</span>
+                </div>
+                <h3 class="font-['Oswald'] text-lg font-bold text-white uppercase leading-tight">{s.title}</h3>
+              </div>
+            </div>
+
+            <!-- Description -->
+            <p class="text-gray-400 text-sm leading-relaxed mb-3">{s.desc}</p>
+
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-1.5">
+              {s.tags.map(tag => (
+                <span
+                  class="text-[10px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full"
+                  style={`background: ${s.color}15; color: ${s.color};`}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="#pricing" class="btn-primary w-full block text-lg py-4">
+        LEARN ALL 5 SKILLS — 4,999 PKR →
+      </a>
+      <p class="text-gray-500 text-xs mt-2">24+ hours of content · Always updated · 1-on-1 mentorship</p>
+    </div>
+  </div>
+</section>

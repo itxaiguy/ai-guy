@@ -1,0 +1,95 @@
+---
+import data from '../content/bonuses.json';
+const { bonuses, core_value, bonus_value, total_value, your_price } = data;
+---
+<section class="py-14 bg-[#0d0d0d]">
+  <div class="max-w-lg mx-auto px-4">
+    <div class="text-center mb-10">
+      <div class="section-tag">🎁 Exclusive Bonuses</div>
+      <h2 class="font-['Oswald'] text-3xl font-bold uppercase text-white mt-2">
+        4 POWERFUL BONUSES —<br/>
+        <span class="text-[#ff1f5e]">INCLUDED FREE</span><br/>
+        WITH YOUR ENROLMENT
+      </h2>
+      <p class="text-gray-400 text-sm mt-3">These aren't filler bonuses. Each one is a standalone workshop that adds serious value.</p>
+    </div>
+
+    <div class="space-y-5">
+      {bonuses.map(b => (
+        <div class="rounded-2xl border overflow-hidden" style={`border-color: ${b.color}30; background: #0d0d0d;`}>
+          <div class="px-5 pt-5 pb-4 border-b" style={`border-color: ${b.color}20;`}>
+            <div class="flex items-start gap-3">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0"
+                style={`background: ${b.color}15; border: 1px solid ${b.color}30;`}>
+                {b.icon}
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 flex-wrap mb-1">
+                  <span class="text-xs font-bold uppercase tracking-widest" style={`color: ${b.color};`}>{b.tag}</span>
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase"
+                    style={`background: ${b.color}15; color: ${b.color};`}>
+                    Bonus #{b.num}
+                  </span>
+                </div>
+                <h3 class="font-['Oswald'] font-bold text-white text-xl uppercase leading-tight">{b.title}</h3>
+                <p class="text-sm mt-0.5" style={`color: ${b.color};`}>{b.subtitle}</p>
+              </div>
+            </div>
+          </div>
+          <div class="px-5 py-4">
+            <p class="text-gray-400 text-sm leading-relaxed mb-4">{b.desc}</p>
+            <p class="text-xs font-bold uppercase tracking-widest mb-2.5" style={`color: ${b.color};`}>What's covered:</p>
+            <ul class="space-y-2 mb-4">
+              {b.highlights.map(h => (
+                <li class="flex items-start gap-2 text-sm text-gray-300">
+                  <span style={`color: ${b.color};`} class="shrink-0 mt-0.5">✓</span>
+                  <span>{h}</span>
+                </li>
+              ))}
+            </ul>
+            <div class="inline-block text-xs font-bold px-3 py-1.5 rounded-full"
+              style={`background: ${b.color}15; color: ${b.color};`}>
+              {b.value}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Value stack -->
+    <div class="mt-8 rounded-2xl border border-[#cc1a1a]/30 bg-gradient-to-br from-[#1a0808] to-[#0a0a0a] p-6">
+      <p class="text-center text-gray-400 text-xs uppercase tracking-widest mb-5">What you're getting today</p>
+      <div class="space-y-3 mb-5">
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-gray-300">5-Module AI Content Mentorship</span>
+          <span class="text-gray-500 line-through font-['Oswald']">{core_value}</span>
+        </div>
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-gray-300">4 Exclusive Bonus Workshops</span>
+          <span class="text-gray-500 line-through font-['Oswald']">{bonus_value}</span>
+        </div>
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-gray-300">Weekly 1-on-1 Calls + Discord</span>
+          <span class="text-gray-500 line-through font-['Oswald']">Priceless</span>
+        </div>
+        <div class="h-px bg-[#1e1e1e]"></div>
+        <div class="flex items-center justify-between">
+          <span class="text-white font-bold text-sm">Total Value</span>
+          <span class="text-gray-400 line-through font-['Oswald'] text-lg">{total_value}</span>
+        </div>
+      </div>
+      <div class="text-center">
+        <p class="text-gray-400 text-sm">You pay today</p>
+        <p class="text-[#ff1f5e] font-['Oswald'] text-5xl font-bold mt-1">{your_price}</p>
+        <p class="text-[#00d4b4] text-sm font-bold mt-1">One-time · Lifetime access · No hidden fees</p>
+      </div>
+    </div>
+
+    <div class="mt-6 text-center">
+      <a href="#pricing" class="btn-primary w-full block text-xl py-5 shadow-[0_0_30px_rgba(255,31,94,0.4)]">
+        CLAIM ALL BONUSES — {your_price} →
+      </a>
+      <p class="text-gray-500 text-xs mt-3">🛡️ 48-hour money-back guarantee · Instant access after enrolment</p>
+    </div>
+  </div>
+</section>

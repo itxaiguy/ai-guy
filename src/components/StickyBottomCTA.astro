@@ -1,0 +1,43 @@
+---
+---
+<div
+  id="sticky-bottom-cta"
+  class="fixed bottom-0 left-0 right-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-md border-t border-[#1e1e1e] px-4 py-3 translate-y-full transition-transform duration-300"
+>
+  <div class="max-w-lg mx-auto flex items-center justify-between gap-3">
+    <div class="flex-1 min-w-0">
+      <p class="text-white font-['Oswald'] font-bold text-base leading-tight">
+        AI Content Mentorship — <span class="text-[#ff1f5e]">4,999 PKR</span>
+      </p>
+      <p class="text-gray-500 text-xs truncate">⏰ Price increases soon · 🛡️ 48-hr guarantee · ♾️ Lifetime access</p>
+    </div>
+    <a
+      href="#pricing"
+      class="btn-primary shrink-0 text-sm py-2.5 px-5 whitespace-nowrap shadow-[0_0_20px_rgba(255,31,94,0.4)]"
+    >
+      ENROLL NOW →
+    </a>
+  </div>
+</div>
+
+<script>
+  const bar = document.getElementById('sticky-bottom-cta');
+  const pricing = document.getElementById('pricing');
+
+  function updateBar() {
+    const scrollY = window.scrollY;
+    if (scrollY > 300) {
+      bar?.classList.remove('translate-y-full');
+    } else {
+      bar?.classList.add('translate-y-full');
+    }
+    if (pricing) {
+      const rect = pricing.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        bar?.classList.add('translate-y-full');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', updateBar, { passive: true });
+</script>

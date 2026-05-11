@@ -1,0 +1,88 @@
+---
+import data from '../content/modules.json';
+const { modules } = data;
+---
+<section id="modules" class="py-14 bg-[#0a0a0a]">
+  <div class="max-w-lg mx-auto px-4">
+    <div class="text-center mb-10">
+      <div class="section-tag">📚 The Curriculum</div>
+      <h2 class="font-['Oswald'] text-3xl font-bold uppercase text-white mt-2">
+        5 MODULES.<br/>
+        <span class="text-[#ff1f5e]">COMPLETE AI CONTENT</span><br/>
+        MASTERY.
+      </h2>
+      <p class="text-gray-400 text-sm mt-3">
+        24+ hours of pre-recorded content — always growing as new AI tools launch.
+      </p>
+    </div>
+
+    <div class="space-y-3">
+      {modules.map((mod) => (
+        <details class="card-dark group cursor-pointer" style={`border-color: ${mod.color}20;`}>
+          <summary class="flex items-center justify-between gap-3 list-none">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg flex items-center justify-center text-base shrink-0"
+                style={`background: ${mod.color}15; border: 1px solid ${mod.color}30;`}>
+                {mod.icon}
+              </div>
+              <div>
+                <span class="block text-[10px] font-bold uppercase tracking-wider" style={`color: ${mod.color};`}>{mod.num}</span>
+                <span class="font-['Oswald'] font-bold text-white uppercase text-base leading-tight">{mod.title}</span>
+              </div>
+            </div>
+            <svg class="w-4 h-4 text-gray-400 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+
+          <div class="mt-3 pt-3 border-t border-[#1e1e1e] space-y-4">
+            <p class="text-gray-400 text-sm leading-relaxed">{mod.desc}</p>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest mb-2" style={`color: ${mod.color};`}>What's covered:</p>
+              <ul class="space-y-1.5">
+                {mod.lessons.map(lesson => (
+                  <li class="flex items-center gap-2 text-xs text-gray-400">
+                    <span style={`color: ${mod.color};`}>✓</span>
+                    <span>{lesson}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="h-px bg-[#1e1e1e]"></div>
+            <div class="rounded-xl p-3" style={`background: ${mod.color}08; border: 1px solid ${mod.color}20;`}>
+              <p class="text-xs font-bold uppercase tracking-widest mb-2" style={`color: ${mod.color};`}>
+                🎯 After this module you'll be able to:
+              </p>
+              <ul class="space-y-1.5">
+                {mod.outcomes.map(outcome => (
+                  <li class="flex items-start gap-2 text-xs text-gray-300">
+                    <span style={`color: ${mod.color};`} class="shrink-0 mt-0.5">→</span>
+                    <span>{outcome}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <div class="mt-5 rounded-xl bg-[#111] border border-[#1e1e1e] p-4 flex items-start gap-3">
+      <span class="text-xl shrink-0">♾️</span>
+      <div>
+        <p class="text-white text-sm font-bold">Always Growing</p>
+        <p class="text-gray-400 text-xs mt-0.5 leading-relaxed">
+          Whenever a new AI tool launches or something new hits the market, new lessons are added — at no extra cost.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="#pricing" class="btn-primary w-full block text-xl py-5">ENROLL & GET ALL 5 MODULES →</a>
+      <div class="flex items-center justify-center gap-2 mt-3">
+        <div class="flex text-[#f59e0b] text-xs">★★★★★</div>
+        <p class="text-gray-400 text-xs">Trusted by ecom brands & marketers</p>
+      </div>
+    </div>
+  </div>
+</section>

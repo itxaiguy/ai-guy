@@ -1,0 +1,191 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: "landing"
+    label: "🏠 Landing Page"
+    files:
+
+      # ─── ANNOUNCEMENT BAR ────────────────────────────────────────────
+      - name: "announcement"
+        label: "📢 Announcement Bar"
+        file: "src/content/announcement.json"
+        fields:
+          - { label: "Scrolling Text", name: "text", widget: "string", hint: "The text that scrolls across the top bar" }
+          - { label: "CTA Label", name: "cta_label", widget: "string", default: "Enroll Now — 4,999 PKR →" }
+
+      # ─── HERO ────────────────────────────────────────────────────────
+      - name: "hero"
+        label: "🦸 Hero Section"
+        file: "src/content/hero.json"
+        fields:
+          - { label: "Tag (pill above headline)", name: "tag", widget: "string" }
+          - { label: "Headline Line 1", name: "headline1", widget: "string" }
+          - { label: "Headline Accent (pink)", name: "headline_accent1", widget: "string" }
+          - { label: "Headline Line 2", name: "headline2", widget: "string" }
+          - { label: "Headline Accent 2 (teal)", name: "headline_accent2", widget: "string" }
+          - { label: "Subheadline", name: "subheadline", widget: "text" }
+          - { label: "Hero Image", name: "hero_image", widget: "image", required: false, hint: "Before/after product sample image" }
+          - { label: "Student Count Badge", name: "student_count", widget: "string", default: "[X]+" }
+          - { label: "CTA Button Text", name: "cta_text", widget: "string" }
+          - { label: "Disclaimer (below button)", name: "disclaimer", widget: "string" }
+
+      # ─── PROOF BAR ───────────────────────────────────────────────────
+      - name: "proofbar"
+        label: "📊 Proof Bar Stats"
+        file: "src/content/proofbar.json"
+        fields:
+          - label: "Stats (4 boxes)"
+            name: "stats"
+            widget: "list"
+            summary: "{{fields.label}}: {{fields.value}}"
+            fields:
+              - { label: "Emoji Icon", name: "icon", widget: "string" }
+              - { label: "Value (big number)", name: "value", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+          - label: "Sample Content Images (3)"
+            name: "samples"
+            widget: "list"
+            summary: "Sample {{index}}"
+            fields:
+              - { label: "Image", name: "image", widget: "image", required: false }
+              - { label: "Caption", name: "caption", widget: "string", required: false }
+
+      # ─── MODULES ─────────────────────────────────────────────────────
+      - name: "modules"
+        label: "📚 Course Modules"
+        file: "src/content/modules.json"
+        fields:
+          - label: "Modules"
+            name: "modules"
+            widget: "list"
+            summary: "{{fields.num}} — {{fields.title}}"
+            fields:
+              - { label: "Module Number (e.g. Module 1)", name: "num", widget: "string" }
+              - { label: "Icon (emoji)", name: "icon", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Accent Color (hex)", name: "color", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - label: "Lesson Topics"
+                name: "lessons"
+                widget: "list"
+                field: { label: "Lesson", name: "lesson", widget: "string" }
+              - label: "Outcomes (After this module)"
+                name: "outcomes"
+                widget: "list"
+                field: { label: "Outcome", name: "outcome", widget: "string" }
+
+      # ─── TESTIMONIALS ─────────────────────────────────────────────────
+      - name: "testimonials"
+        label: "⭐ Testimonials"
+        file: "src/content/testimonials.json"
+        fields:
+          - { label: "Coach Quote", name: "coach_quote", widget: "text" }
+          - { label: "Coach Name", name: "coach_name", widget: "string" }
+          - { label: "Coach Role/Title", name: "coach_role", widget: "string" }
+          - { label: "Coach Photo", name: "coach_photo", widget: "image", required: false }
+          - label: "Student Testimonials"
+            name: "testimonials"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.role}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role/Title", name: "role", widget: "string" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+              - { label: "Review Text", name: "text", widget: "text" }
+              - { label: "Result Badge (e.g. Saved Rs. 80K)", name: "result", widget: "string" }
+              - { label: "Stars (1–5)", name: "stars", widget: "number", default: 5, value_type: "int", min: 1, max: 5 }
+
+      # ─── COMMUNITY ───────────────────────────────────────────────────
+      - name: "community"
+        label: "💬 Community Section"
+        file: "src/content/community.json"
+        fields:
+          - { label: "Headline", name: "headline", widget: "string" }
+          - { label: "Description", name: "desc", widget: "text" }
+          - label: "Stats (3 boxes)"
+            name: "stats"
+            widget: "list"
+            summary: "{{fields.label}}: {{fields.value}}"
+            fields:
+              - { label: "Value", name: "value", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+          - label: "Discord Feature Bullets"
+            name: "features"
+            widget: "list"
+            field: { label: "Feature", name: "feature", widget: "string" }
+          - label: "Community Sample Images (3)"
+            name: "samples"
+            widget: "list"
+            summary: "Sample {{index}}"
+            fields:
+              - { label: "Image", name: "image", widget: "image", required: false }
+
+      # ─── BONUSES ─────────────────────────────────────────────────────
+      - name: "bonuses"
+        label: "🎁 Bonuses"
+        file: "src/content/bonuses.json"
+        fields:
+          - label: "Bonuses (4)"
+            name: "bonuses"
+            widget: "list"
+            summary: "Bonus #{{fields.num}} — {{fields.title}}"
+            fields:
+              - { label: "Number (01, 02...)", name: "num", widget: "string" }
+              - { label: "Tag Label", name: "tag", widget: "string" }
+              - { label: "Icon (emoji)", name: "icon", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Accent Color (hex)", name: "color", widget: "string" }
+              - { label: "Value Label (e.g. Value: 8,000 PKR)", name: "value", widget: "string" }
+              - label: "What's Covered Bullets"
+                name: "highlights"
+                widget: "list"
+                field: { label: "Point", name: "point", widget: "string" }
+          - { label: "Core Mentorship Value", name: "core_value", widget: "string" }
+          - { label: "Total Bonuses Value", name: "bonus_value", widget: "string" }
+          - { label: "Grand Total Value", name: "total_value", widget: "string" }
+          - { label: "Your Price", name: "your_price", widget: "string" }
+
+      # ─── PRICING ─────────────────────────────────────────────────────
+      - name: "pricing"
+        label: "💳 Pricing"
+        file: "src/content/pricing.json"
+        fields:
+          - { label: "Price (e.g. 4,999)", name: "price", widget: "string" }
+          - { label: "Original Price (crossed out)", name: "original_price", widget: "string" }
+          - { label: "Discount Badge (e.g. 80% OFF)", name: "discount", widget: "string" }
+          - { label: "Checkout URL", name: "checkout_url", widget: "string" }
+          - { label: "Spots Remaining Text (e.g. Only 12 left!)", name: "spots_text", widget: "string" }
+          - { label: "Spots % Taken (0–100)", name: "spots_percent", widget: "number", default: 82 }
+          - { label: "Guarantee Text", name: "guarantee_text", widget: "text" }
+          - label: "What's Included (checklist)"
+            name: "includes"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+
+      # ─── FAQ ─────────────────────────────────────────────────────────
+      - name: "faq"
+        label: "❓ FAQ"
+        file: "src/content/faq.json"
+        fields:
+          - label: "FAQs"
+            name: "faqs"
+            widget: "list"
+            summary: "{{fields.q}}"
+            fields:
+              - { label: "Question", name: "q", widget: "string" }
+              - { label: "Answer", name: "a", widget: "text" }
+
+      # ─── VIDEOS ──────────────────────────────────────────────────────
+      - name: "videos"
+        label: "🎬 Videos"
+        file: "src/content/videos.json"
+        fields:
+          - { label: "Hero Section Video URL", name: "hero_video", widget: "string", required: false, hint: "YouTube embed URL or direct .mp4 link (leave empty to show image instead)" }
+          - { label: "Coach Intro Video URL", name: "intro_video", widget: "string", required: false, hint: "Shown in the 'Who Is This For' section" }

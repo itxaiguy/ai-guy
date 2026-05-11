@@ -1,0 +1,122 @@
+---
+const milestones = [
+  {
+    phase: "Week 1",
+    emoji: "🖼️",
+    title: "AI Product Photography",
+    color: "#ff1f5e",
+    items: [
+      "Create professional product shots in any setting",
+      "Generate unlimited background variations",
+      "Produce catalogue-ready images without a studio",
+    ],
+  },
+  {
+    phase: "Week 2",
+    emoji: "🎬",
+    title: "AI Brand Videos",
+    color: "#f59e0b",
+    items: [
+      "Produce scroll-stopping video ads from scratch",
+      "Create brand reels for TikTok, Instagram & YouTube",
+      "No camera, crew, or editing experience needed",
+    ],
+  },
+  {
+    phase: "Week 3",
+    emoji: "👤",
+    title: "AI Influencers & Avatars",
+    color: "#00d4b4",
+    items: [
+      "Build your own branded AI influencer/spokesperson",
+      "Create realistic avatar-based talking videos",
+      "No models, no negotiations, no per-post fees",
+    ],
+  },
+  {
+    phase: "Week 4",
+    emoji: "🎙️",
+    title: "AI Voice Cloning",
+    color: "#a855f7",
+    items: [
+      "Clone voices for professional voiceovers",
+      "Generate multilingual audio for ads & demos",
+      "Complete your full AI content toolkit",
+    ],
+  },
+  {
+    phase: "After",
+    emoji: "🏆",
+    title: "Fully Independent AI Content Creator",
+    color: "#3b82f6",
+    items: [
+      "Create unlimited content for your own brand",
+      "Offer AI content as a service to other brands",
+      "Scale without ever booking another shoot again",
+    ],
+  },
+];
+---
+<section class="py-14 bg-[#0d0d0d]">
+  <div class="max-w-lg mx-auto px-4">
+    <div class="text-center mb-10">
+      <div class="section-tag">🗺️ Learning Journey</div>
+      <h2 class="font-['Oswald'] text-3xl font-bold uppercase text-white mt-2">
+        WHAT YOU'LL BE ABLE<br/>
+        TO DO <span class="text-[#ff1f5e]">WEEK BY WEEK</span>
+      </h2>
+      <p class="text-gray-400 text-sm mt-3">
+        A structured path that takes you from zero to full AI content mastery.
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative">
+      <!-- Vertical line -->
+      <div class="absolute left-5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#ff1f5e] via-[#00d4b4] to-[#3b82f6]"></div>
+
+      <div class="space-y-8">
+        {milestones.map((m, i) => (
+          <div class="relative pl-14">
+            <!-- Circle -->
+            <div
+              class="absolute left-0 top-0 w-10 h-10 rounded-full flex items-center justify-center text-lg border-2 bg-[#0a0a0a] shadow-lg"
+              style={`border-color: ${m.color}; box-shadow: 0 0 16px ${m.color}55;`}
+            >
+              {m.emoji}
+            </div>
+
+            <!-- Card -->
+            <div class="card-dark" style={`border-color: ${m.color}30;`}>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold uppercase tracking-widest" style={`color: ${m.color};`}>{m.phase}</span>
+                <span
+                  class="text-xs font-bold px-2.5 py-0.5 rounded-full"
+                  style={`background-color: ${m.color}20; color: ${m.color};`}
+                >
+                  {i < 4 ? `Skill 0${i + 1}` : 'Goal'}
+                </span>
+              </div>
+              <h3 class="font-['Oswald'] text-lg font-bold text-white uppercase mb-3">{m.title}</h3>
+              <ul class="space-y-1.5">
+                {m.items.map(item => (
+                  <li class="flex items-start gap-2 text-sm text-gray-400">
+                    <span style={`color: ${m.color};`} class="shrink-0">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-10 text-center">
+      <a href="#pricing" class="btn-primary w-full block text-lg py-4">
+        START MY AI JOURNEY TODAY →
+      </a>
+      <p class="text-gray-500 text-xs mt-3">🛡️ 48-Hour Money-Back Guarantee</p>
+    </div>
+  </div>
+</section>

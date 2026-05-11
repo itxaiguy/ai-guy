@@ -1,0 +1,134 @@
+---
+import data from '../content/pricing.json';
+---
+<section id="pricing" class="py-14 bg-[#0a0a0a]">
+  <div class="max-w-lg mx-auto px-4">
+    <div class="text-center mb-8">
+      <div class="section-tag">⚡ Enroll Today</div>
+      <h2 class="font-['Oswald'] text-3xl font-bold uppercase text-white">
+        ONE INVESTMENT.<br/>
+        <span class="text-[#ff1f5e]">UNLIMITED CONTENT</span><br/>
+        FOR LIFE.
+      </h2>
+      <!-- Countdown Timer -->
+      <div class="mt-5 inline-block">
+        <p class="text-gray-400 text-xs uppercase tracking-widest mb-2">⏰ Offer Expires In:</p>
+        <div class="flex items-center justify-center gap-2">
+          <div class="bg-[#111] border border-[#cc1a1a]/40 rounded-xl px-3 py-2 min-w-[56px] text-center">
+            <span id="cd-hours" class="font-['Oswald'] text-3xl font-bold text-[#ff1f5e]">00</span>
+            <p class="text-gray-500 text-[10px] uppercase tracking-wider mt-0.5">Hours</p>
+          </div>
+          <span class="font-['Oswald'] text-2xl font-bold text-[#ff1f5e]">:</span>
+          <div class="bg-[#111] border border-[#cc1a1a]/40 rounded-xl px-3 py-2 min-w-[56px] text-center">
+            <span id="cd-minutes" class="font-['Oswald'] text-3xl font-bold text-[#ff1f5e]">00</span>
+            <p class="text-gray-500 text-[10px] uppercase tracking-wider mt-0.5">Mins</p>
+          </div>
+          <span class="font-['Oswald'] text-2xl font-bold text-[#ff1f5e]">:</span>
+          <div class="bg-[#111] border border-[#cc1a1a]/40 rounded-xl px-3 py-2 min-w-[56px] text-center">
+            <span id="cd-seconds" class="font-['Oswald'] text-3xl font-bold text-[#ff1f5e]">00</span>
+            <p class="text-gray-500 text-[10px] uppercase tracking-wider mt-0.5">Secs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing Card -->
+    <div class="relative rounded-3xl overflow-hidden border border-[#cc1a1a]/40">
+      <div class="bg-gradient-to-r from-[#cc1a1a] to-[#ff1f5e] p-5 text-center">
+        <p class="text-white/80 text-sm uppercase tracking-widest font-bold mb-1">AI Content Creation Mentorship</p>
+        <div class="flex items-center justify-center gap-3">
+          <span class="text-white/50 text-2xl font-['Oswald'] line-through">{data.original_price}</span>
+          <span class="bg-white text-[#cc1a1a] text-xs font-black px-2 py-1 rounded-full">{data.discount}</span>
+        </div>
+        <div class="text-white font-['Oswald'] font-bold">
+          <p class="text-sm uppercase mb-1">TODAY ONLY</p>
+          <p class="text-6xl leading-none">{data.price}</p>
+          <p class="text-2xl">PKR</p>
+        </div>
+        <p class="text-white/70 text-xs mt-2">One-time payment · Lifetime access · No hidden fees</p>
+      </div>
+
+      <div class="bg-[#111] p-5">
+        <p class="text-gray-400 text-xs uppercase tracking-widest mb-4">Everything you get:</p>
+        <ul class="space-y-2.5">
+          {data.includes.map(item => (
+            <li class="flex items-center gap-3 text-sm">
+              <span class="text-[#00d4b4] shrink-0">✓</span>
+              <span class="text-gray-300">{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <!-- Spots bar -->
+        <div class="mt-5 mb-2">
+          <div class="flex items-center justify-between text-xs mb-1">
+            <span class="text-gray-400">Spots remaining</span>
+            <span class="text-[#ff1f5e] font-bold">{data.spots_text}</span>
+          </div>
+          <div class="w-full bg-[#1e1e1e] rounded-full h-2">
+            <div class="bg-gradient-to-r from-[#cc1a1a] to-[#ff1f5e] h-2 rounded-full"
+              style={`width: ${data.spots_percent}%`}></div>
+          </div>
+          <p class="text-gray-500 text-[10px] mt-1 text-center">{data.spots_percent}% spots taken — act fast</p>
+        </div>
+
+        <div class="mt-5">
+          <a href={data.checkout_url} class="btn-primary w-full block text-center text-xl py-5 shadow-[0_0_40px_rgba(255,31,94,0.5)]">
+            ENROLL NOW — {data.price} PKR →
+          </a>
+          <div class="flex items-center justify-center gap-2 mt-3">
+            <div class="flex text-[#f59e0b] text-sm">★★★★★</div>
+            <p class="text-gray-400 text-xs">Trusted by ecom brands & marketers</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guarantee -->
+    <div class="mt-6 rounded-3xl bg-gradient-to-br from-[#1a0a0a] to-[#0a0a0a] border border-[#cc1a1a]/30 p-6 text-center">
+      <div class="w-20 h-20 mx-auto mb-4 bg-[#cc1a1a]/10 rounded-full flex items-center justify-center border-2 border-[#cc1a1a]/30">
+        <span class="text-3xl">🛡️</span>
+      </div>
+      <h3 class="font-['Oswald'] text-2xl font-bold uppercase text-white mb-2">
+        STILL ON THE FENCE?<br/>
+        <span class="text-[#ff1f5e]">100% RISK-FREE</span><br/>
+        MONEY-BACK GUARANTEE
+      </h3>
+      <p class="text-gray-400 text-sm leading-relaxed">{data.guarantee_text}</p>
+      <a href={data.checkout_url} class="btn-red w-full block text-center mt-5 py-4">
+        🔒 ENROLL RISK-FREE NOW
+      </a>
+      <p class="text-gray-500 text-xs mt-2">Secure Checkout · Instant Access</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const KEY = 'aiguy_deadline_v2';
+  let deadline = localStorage.getItem(KEY);
+  if (!deadline) {
+    deadline = String(Date.now() + 24 * 60 * 60 * 1000);
+    localStorage.setItem(KEY, deadline);
+  }
+  function pad(n: number) { return String(n).padStart(2, '0'); }
+  function tick() {
+    const diff = Number(deadline) - Date.now();
+    if (diff <= 0) {
+      const nd = String(Date.now() + 24 * 60 * 60 * 1000);
+      localStorage.setItem(KEY, nd);
+      deadline = nd;
+      return;
+    }
+    const h = Math.floor(diff / 3_600_000);
+    const m = Math.floor((diff % 3_600_000) / 60_000);
+    const s = Math.floor((diff % 60_000) / 1_000);
+    const he = document.getElementById('cd-hours');
+    const me = document.getElementById('cd-minutes');
+    const se = document.getElementById('cd-seconds');
+    if (he) he.textContent = pad(h);
+    if (me) me.textContent = pad(m);
+    if (se) se.textContent = pad(s);
+  }
+  tick();
+  setInterval(tick, 1000);
+</script>

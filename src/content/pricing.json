@@ -1,0 +1,22 @@
+{
+  "price": "4,999",
+  "original_price": "24,999 PKR",
+  "discount": "80% OFF",
+  "checkout_url": "https://checkout.example.com",
+  "spots_text": "Only 12 left!",
+  "spots_percent": 82,
+  "guarantee_text": "We believe so strongly in this mentorship that we offer a 48-hour money-back guarantee. Enroll, explore the content, join the community — and if it's not what we promised, you get a full refund. No questions asked.",
+  "includes": [
+    "Module 1: AI Product Photography",
+    "Module 2: AI Brand Videos",
+    "Module 3: AI Influencers",
+    "Module 4: AI Voice Cloning",
+    "Module 5: AI Avatars",
+    "24+ Hours of Pre-recorded Lectures",
+    "Weekly Live 1-on-1 Coaching Calls",
+    "Private Discord Community Access",
+    "AI Tools & Resources Vault",
+    "Lifetime Access + All Future Updates",
+    "48-Hour Money-Back Guarantee"
+  ]
+}

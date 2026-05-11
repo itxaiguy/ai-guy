@@ -1,0 +1,72 @@
+{
+  "bonuses": [
+    {
+      "num": "01",
+      "tag": "🔥 Exclusive Bonus",
+      "icon": "⚡",
+      "title": "The AI Prompting Masterclass",
+      "subtitle": "Get Maximum Results from Every AI Tool",
+      "desc": "Most people use AI tools like beginners — vague inputs, average outputs. This workshop teaches you the exact prompting system used to get professional-grade results every single time. No generic templates, no fluff — a deep, practical system for prompting AI for content creation specifically.",
+      "color": "#ff1f5e",
+      "value": "Value: 8,000 PKR",
+      "highlights": [
+        "Prompting frameworks for product photography",
+        "Video and visual content prompt structures",
+        "How to iterate and refine outputs like a pro",
+        "Avoid the mistakes 90% of AI users make"
+      ]
+    },
+    {
+      "num": "02",
+      "tag": "🤖 Exclusive Bonus",
+      "icon": "🧠",
+      "title": "Master Claude as Your Co-Worker",
+      "subtitle": "AI That Actually Thinks With You",
+      "desc": "Claude isn't just a chatbot — it's the most powerful AI co-worker available right now. This dedicated workshop shows you how to use Claude for content strategy, brief writing, campaign planning, image prompt creation, script writing, and much more. Treat it like a full-time team member — because it is.",
+      "color": "#a855f7",
+      "value": "Value: 6,000 PKR",
+      "highlights": [
+        "Setting up Claude as a content strategy partner",
+        "Using Claude to write perfect AI image prompts",
+        "Campaign planning and content calendars with Claude",
+        "Building custom workflows for your brand content"
+      ]
+    },
+    {
+      "num": "03",
+      "tag": "📱 Exclusive Bonus",
+      "icon": "📱",
+      "title": "TikTok & YouTube Monetization",
+      "subtitle": "Turn Your AI Content into Passive Income",
+      "desc": "Why stop at serving brands? Learn how to build your own faceless TikTok and YouTube channels using the exact AI content you're already creating. This bonus covers account setup, content strategy, algorithm secrets, monetization requirements, and how to go from zero to earning — without ever showing your face.",
+      "color": "#00d4b4",
+      "value": "Value: 10,000 PKR",
+      "highlights": [
+        "Faceless channel setup on TikTok & YouTube",
+        "AI content strategy for viral organic growth",
+        "Monetization: Creator Rewards, AdSense, brand deals",
+        "Scaling from one channel to multiple revenue streams"
+      ]
+    },
+    {
+      "num": "04",
+      "tag": "💼 Exclusive Bonus",
+      "icon": "💼",
+      "title": "How to Get Clients — Expert Masterclass",
+      "subtitle": "Turn Your Skill into a Freelance Business",
+      "desc": "Learning the skill is step one. Getting paid for it is step two. This detailed class taught by an expert covers exactly how to land your first and future clients — from positioning yourself, to finding brands, to pricing your services, to closing deals. A complete blueprint for building a freelance AI content business.",
+      "color": "#f59e0b",
+      "value": "Value: 12,000 PKR",
+      "highlights": [
+        "How to position yourself as an AI content expert",
+        "Where to find ecom brands actively looking for content",
+        "Proposal writing, pricing, and package structuring",
+        "Client retention and building long-term retainers"
+      ]
+    }
+  ],
+  "core_value": "24,999 PKR",
+  "bonus_value": "36,000 PKR",
+  "total_value": "60,999 PKR",
+  "your_price": "4,999 PKR"
+}

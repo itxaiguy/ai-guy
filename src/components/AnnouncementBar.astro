@@ -1,0 +1,31 @@
+---
+import data from '../content/announcement.json';
+---
+<div id="announcement-bar" class="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-[#cc1a1a] via-[#ff1f5e] to-[#cc1a1a] overflow-hidden" style="height:36px;">
+  <div class="announcement-track flex items-center h-full whitespace-nowrap">
+    <span class="announcement-content inline-flex items-center gap-8 px-4 text-white text-xs font-bold uppercase tracking-wide">
+      {data.text}
+      &nbsp;&nbsp;•&nbsp;&nbsp;
+      <a href="#pricing" class="underline underline-offset-2 hover:text-white/80 transition-colors">{data.cta_label}</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span>
+    <span class="announcement-content inline-flex items-center gap-8 px-4 text-white text-xs font-bold uppercase tracking-wide" aria-hidden="true">
+      {data.text}
+      &nbsp;&nbsp;•&nbsp;&nbsp;
+      <a href="#pricing" class="underline underline-offset-2 hover:text-white/80 transition-colors">{data.cta_label}</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span>
+  </div>
+</div>
+
+<style>
+  .announcement-track {
+    animation: marquee 35s linear infinite;
+    width: max-content;
+  }
+  .announcement-track:hover { animation-play-state: paused; }
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>

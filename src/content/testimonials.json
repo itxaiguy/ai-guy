@@ -1,0 +1,64 @@
+{
+  "coach_quote": "I built this system because I watched brands waste hundreds of thousands on shoots and influencers every year. AI can replace all of it — and I'm teaching you exactly how.",
+  "coach_name": "Your Coach — AI Guy",
+  "coach_role": "AI Content Creation Expert · [X]+ Brands Trained",
+  "coach_photo": "",
+  "testimonials": [
+    {
+      "name": "[Student Name]",
+      "role": "Ecom Brand Owner",
+      "photo": "",
+      "text": "Before this mentorship, I was spending over Rs. 80,000 per shoot. Now I create unlimited AI product photos myself in hours. The ROI is insane.",
+      "result": "Saved Rs. 80K/shoot",
+      "stars": 5
+    },
+    {
+      "name": "[Student Name]",
+      "role": "Digital Marketer",
+      "photo": "",
+      "text": "The AI influencer module alone was worth 10x the price. I created a branded spokesperson for my client in a single afternoon. They were blown away.",
+      "result": "Landed a new client",
+      "stars": 5
+    },
+    {
+      "name": "[Student Name]",
+      "role": "Shopify Store Owner",
+      "photo": "",
+      "text": "My product listings used to look amateur. Now they look like premium brand shoots — all done with AI tools I learned in Week 1.",
+      "result": "Sales conversion up",
+      "stars": 5
+    },
+    {
+      "name": "[Student Name]",
+      "role": "Freelancer",
+      "photo": "",
+      "text": "I now offer AI content creation as a service to 3 ecom brands. The mentorship basically gave me a new income stream I didn't have before.",
+      "result": "New service income",
+      "stars": 5
+    },
+    {
+      "name": "[Student Name]",
+      "role": "Marketing Agency Owner",
+      "photo": "",
+      "text": "We used to outsource content creation. Now our team creates everything in-house using AI. Costs dropped, turnaround dropped, quality went up.",
+      "result": "Agency costs cut 60%",
+      "stars": 5
+    },
+    {
+      "name": "[Student Name]",
+      "role": "D2C Brand Founder",
+      "photo": "",
+      "text": "The AI voice cloning + avatar combo changed everything for our video ads. We now produce video content weekly instead of quarterly.",
+      "result": "10x content output",
+      "stars": 5
+    },
+    {
+      "name": "[Student Name]",
+      "role": "Social Media Manager",
+      "photo": "",
+      "text": "The 1-on-1 calls are what make this different. I'm not watching tutorials and guessing — I get direct answers for my specific situation every week.",
+      "result": "Personalised results",
+      "stars": 5
+    }
+  ]
+}

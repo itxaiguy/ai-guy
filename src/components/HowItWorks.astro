@@ -1,0 +1,100 @@
+---
+const steps = [
+  {
+    num: "01",
+    icon: "⚡",
+    title: "Enroll & Get Instant Access",
+    desc: "One payment unlocks everything — 24+ hours of structured pre-recorded lectures across all 5 AI content skills. Start immediately.",
+    color: "#ff1f5e"
+  },
+  {
+    num: "02",
+    icon: "🎓",
+    title: "Learn at Your Own Pace",
+    desc: "Work through each module at whatever speed suits you. Content is always growing — whenever a new AI tool launches, new lessons are added at no extra cost.",
+    color: "#f59e0b"
+  },
+  {
+    num: "03",
+    icon: "📞",
+    title: "Weekly Live 1-on-1 Calls",
+    desc: "Every week, hop on a personal call with the coach. Get your work reviewed, your questions answered, and your strategy refined — directly, not in a group.",
+    color: "#00d4b4"
+  },
+  {
+    num: "04",
+    icon: "💬",
+    title: "Community Chat Support",
+    desc: "Between calls, our private Discord community is always available. Ask questions, share work, get feedback — from the coach and fellow members.",
+    color: "#a855f7"
+  },
+];
+---
+<section id="how-it-works" class="py-14 bg-[#0a0a0a]">
+  <div class="max-w-lg mx-auto px-4">
+    <div class="text-center mb-10">
+      <div class="section-tag">⚙️ How It Works</div>
+      <h2 class="font-['Oswald'] text-3xl font-bold uppercase text-white mt-2">
+        THIS ISN'T JUST A COURSE —<br/>
+        IT'S A <span class="text-[#ff1f5e]">FULL MENTORSHIP</span>
+      </h2>
+      <p class="text-gray-400 text-sm mt-3">
+        You get personal 1-on-1 attention, not just video lectures.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {steps.map(step => (
+        <div class="card-dark flex gap-4 items-start relative overflow-hidden">
+          <!-- Background number -->
+          <div
+            class="absolute right-3 top-1/2 -translate-y-1/2 font-['Oswald'] text-7xl font-bold opacity-5 select-none"
+            style={`color: ${step.color};`}
+          >
+            {step.num}
+          </div>
+
+          <!-- Icon circle -->
+          <div
+            class="w-12 h-12 rounded-xl flex items-center justify-center text-xl shrink-0 relative z-10"
+            style={`background: ${step.color}15; border: 1px solid ${step.color}30;`}
+          >
+            {step.icon}
+          </div>
+
+          <div class="relative z-10">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-xs font-bold uppercase tracking-widest" style={`color: ${step.color};`}>Step {step.num}</span>
+            </div>
+            <h3 class="font-['Oswald'] text-lg font-bold text-white uppercase mb-1">{step.title}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- What's included highlight -->
+    <div class="mt-8 rounded-2xl border border-[#1e1e1e] bg-[#0d0d0d] p-5">
+      <p class="text-center text-gray-400 text-xs uppercase tracking-widest mb-4">Everything in one enrolment</p>
+      <div class="grid grid-cols-2 gap-3">
+        {[
+          { icon: "🎥", text: "24+ hrs Pre-recorded Lectures" },
+          { icon: "📞", text: "Weekly Live 1-on-1 Calls" },
+          { icon: "💬", text: "Private Discord Community" },
+          { icon: "♾️", text: "Lifetime Access + Updates" },
+        ].map(item => (
+          <div class="flex items-center gap-2 text-sm text-gray-300">
+            <span class="text-base">{item.icon}</span>
+            <span>{item.text}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="#pricing" class="btn-primary w-full block text-xl py-5">
+        ENROLL NOW →
+      </a>
+    </div>
+  </div>
+</section>

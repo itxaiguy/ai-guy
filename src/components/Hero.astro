@@ -1,0 +1,98 @@
+---
+import data from '../content/hero.json';
+import videos from '../content/videos.json';
+---
+<section class="relative bg-[#0a0a0a] overflow-hidden pt-6 pb-10">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#cc1a1a]/20 rounded-full blur-[100px]"></div>
+  </div>
+
+  <div class="relative z-10 max-w-lg mx-auto px-4 text-center">
+    <div class="section-tag mb-4">🚀 {data.tag}</div>
+
+    <h1 class="font-['Oswald'] text-4xl md:text-5xl font-bold uppercase leading-tight text-white mb-4">
+      {data.headline1}<br/>
+      <span class="text-[#ff1f5e]">{data.headline_accent1}</span> {data.headline2}<br/>
+      <span class="text-[#00d4b4]">{data.headline_accent2}</span>
+    </h1>
+
+    <p class="text-gray-300 text-base mb-3 leading-relaxed">
+      {data.subheadline}
+    </p>
+
+    <!-- Two audience pills -->
+    <div class="flex flex-col sm:flex-row gap-2 justify-center mb-6">
+      <div class="flex items-center gap-2 bg-[#111] border border-[#ff1f5e]/30 rounded-xl px-4 py-2.5 text-left">
+        <span class="text-xl shrink-0">🏪</span>
+        <div>
+          <p class="text-white text-xs font-bold">For Brands & Marketers</p>
+          <p class="text-gray-500 text-[11px]">Cut content costs. Scale production.</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 bg-[#111] border border-[#00d4b4]/30 rounded-xl px-4 py-2.5 text-left">
+        <span class="text-xl shrink-0">🎯</span>
+        <div>
+          <p class="text-white text-xs font-bold">For Individuals & Beginners</p>
+          <p class="text-gray-500 text-[11px]">Learn a high-income skill. Get clients.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero visual: video if set, else image, else placeholder -->
+    <div class="relative mx-auto mb-6 w-full max-w-sm">
+      {videos.hero_video ? (
+        <div class="rounded-2xl overflow-hidden aspect-video">
+          <iframe
+            src={videos.hero_video}
+            class="w-full h-full"
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+          />
+        </div>
+      ) : data.hero_image ? (
+        <img
+          src={data.hero_image}
+          alt="AI Content Sample"
+          class="w-full rounded-2xl border border-[#2e2e2e] object-cover aspect-[4/3]"
+        />
+      ) : (
+        <div class="bg-[#1a1a1a] border border-[#2e2e2e] rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center">
+          <div class="text-center text-gray-500">
+            <div class="text-5xl mb-3">🖼️</div>
+            <p class="text-sm font-medium text-gray-400">Before / After AI Content Sample</p>
+            <p class="text-xs text-gray-600 mt-1">[Upload image or video in CMS]</p>
+          </div>
+        </div>
+      )}
+      <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#ff1f5e] text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap shadow-lg">
+        🎓 {data.student_count} Students Already Enrolled
+      </div>
+    </div>
+
+    <!-- 5 offerings pills -->
+    <div class="flex flex-wrap justify-center gap-2 mt-6 mb-5">
+      {["🖼️ AI Product Photos", "🎬 AI Videos", "👤 AI Influencers", "🎙️ AI Voice", "🤖 AI Avatars"].map(tag => (
+        <span class="bg-[#111] border border-[#2e2e2e] text-gray-300 text-xs px-3 py-1.5 rounded-full font-medium">{tag}</span>
+      ))}
+    </div>
+
+    <!-- Social proof -->
+    <div class="flex items-center justify-center gap-3 mb-6">
+      <div class="flex -space-x-2">
+        <div class="w-8 h-8 rounded-full bg-[#333] border-2 border-[#cc1a1a] flex items-center justify-center text-xs">👤</div>
+        <div class="w-8 h-8 rounded-full bg-[#444] border-2 border-[#cc1a1a] flex items-center justify-center text-xs">👤</div>
+        <div class="w-8 h-8 rounded-full bg-[#555] border-2 border-[#cc1a1a] flex items-center justify-center text-xs">👤</div>
+      </div>
+      <div class="text-left">
+        <div class="flex text-[#f59e0b] text-xs">★★★★★</div>
+        <p class="text-gray-400 text-xs">Brands, marketers & creators</p>
+      </div>
+    </div>
+
+    <a href="#pricing" class="btn-primary w-full block text-center text-xl py-5 shadow-[0_0_30px_rgba(255,31,94,0.4)]">
+      {data.cta_text}
+    </a>
+    <p class="text-gray-500 text-xs mt-3">{data.disclaimer}</p>
+  </div>
+</section>

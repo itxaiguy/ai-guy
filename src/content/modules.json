@@ -1,0 +1,99 @@
+{
+  "modules": [
+    {
+      "num": "Module 1",
+      "icon": "🖼️",
+      "title": "AI Product Photography",
+      "color": "#ff1f5e",
+      "desc": "Master AI tools to create stunning, studio-quality product images for ecom listings, ads, and brand catalogues — without a single physical shoot.",
+      "lessons": [
+        "AI photo generation tools",
+        "Background removal & replacement",
+        "Product staging & styling",
+        "Batch creation for catalogues",
+        "Editing & retouching with AI"
+      ],
+      "outcomes": [
+        "Create professional product shots in any setting",
+        "Generate unlimited background variations",
+        "Produce catalogue-ready images without a studio"
+      ]
+    },
+    {
+      "num": "Module 2",
+      "icon": "🎬",
+      "title": "AI Brand Videos",
+      "color": "#f59e0b",
+      "desc": "Create professional video ads, product demos, and brand content using AI — ready for TikTok, Instagram Reels, YouTube, and paid ads.",
+      "lessons": [
+        "AI video generation tools",
+        "Script-to-video workflows",
+        "Product showcase videos",
+        "Ad-ready video formats",
+        "Motion & animation basics"
+      ],
+      "outcomes": [
+        "Produce scroll-stopping video ads from scratch",
+        "Create brand reels for TikTok, Instagram & YouTube",
+        "No camera, crew, or editing experience needed"
+      ]
+    },
+    {
+      "num": "Module 3",
+      "icon": "👤",
+      "title": "AI Influencers",
+      "color": "#00d4b4",
+      "desc": "Build a custom AI influencer for your brand — a realistic, always-available spokesperson who promotes your products without contracts or per-post fees.",
+      "lessons": [
+        "Creating your AI influencer",
+        "Persona design & branding",
+        "UGC-style content creation",
+        "Product review videos",
+        "Social media ready formats"
+      ],
+      "outcomes": [
+        "Build your own branded AI influencer/spokesperson",
+        "Create realistic UGC and review-style videos",
+        "No models, no negotiations, no per-post fees"
+      ]
+    },
+    {
+      "num": "Module 4",
+      "icon": "🎙️",
+      "title": "AI Voice Cloning",
+      "color": "#a855f7",
+      "desc": "Clone professional voices and generate studio-quality voiceovers for ads, product demos, and brand content in any language — instantly.",
+      "lessons": [
+        "Voice cloning tools & setup",
+        "Voiceover generation for ads",
+        "Multilingual content creation",
+        "Syncing voice to video",
+        "Brand voice consistency"
+      ],
+      "outcomes": [
+        "Clone voices for professional voiceovers instantly",
+        "Generate multilingual audio for ads & demos",
+        "Complete your full AI content audio toolkit"
+      ]
+    },
+    {
+      "num": "Module 5",
+      "icon": "🤖",
+      "title": "AI Avatars",
+      "color": "#3b82f6",
+      "desc": "Create hyper-realistic AI avatars to serve as your brand's face in videos — talking-head content, explainers, and ads without hiring a model.",
+      "lessons": [
+        "AI avatar creation tools",
+        "Realistic talking-head videos",
+        "Lip-sync & expression control",
+        "Branded avatar design",
+        "Deploying avatars in ad campaigns"
+      ],
+      "outcomes": [
+        "Create unlimited avatar-based content for your brand",
+        "Offer AI content as a high-value service to clients",
+        "Scale without ever booking another shoot again"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+---
+import data from '../content/faq.json';
+---
+<section id="faq" class="py-14 bg-[#0a0a0a]">
+  <div class="max-w-lg mx-auto px-4">
+    <div class="text-center mb-10">
+      <div class="section-tag">FAQ</div>
+      <h2 class="font-['Oswald'] text-3xl font-bold uppercase text-white mt-2">
+        FREQUENTLY ASKED<br/><span class="text-[#ff1f5e]">QUESTIONS</span>
+      </h2>
+    </div>
+
+    <div class="space-y-3">
+      {data.faqs.map(faq => (
+        <details class="card-dark group cursor-pointer">
+          <summary class="flex items-center justify-between gap-3 list-none">
+            <span class="font-medium text-white text-sm">{faq.q}</span>
+            <svg class="w-4 h-4 text-[#cc1a1a] shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+            </svg>
+          </summary>
+          <p class="text-gray-400 text-sm mt-3 pt-3 border-t border-[#1e1e1e] leading-relaxed">{faq.a}</p>
+        </details>
+      ))}
+    </div>
+
+    <div class="mt-10 text-center">
+      <p class="text-gray-400 text-sm mb-4">Still have questions? We're in Discord — come ask.</p>
+      <a href="#pricing" class="btn-primary w-full block text-xl py-5 shadow-[0_0_30px_rgba(255,31,94,0.4)]">
+        ENROLL NOW — 4,999 PKR →
+      </a>
+    </div>
+  </div>
+</section>
