@@ -31,7 +31,7 @@ const steps = [
 ];
 ---
 <section id="how-it-works" class="py-14 bg-[#0a0a0a]">
-  <div class="max-w-lg mx-auto px-4">
+  <div class="max-w-lg lg:max-w-5xl mx-auto px-4 lg:px-8">
     <div class="text-center mb-10">
       <div class="section-tag">⚙️ How It Works</div>
       <h2 class="font-['Oswald'] text-3xl font-bold uppercase text-white mt-2">
@@ -43,7 +43,7 @@ const steps = [
       </p>
     </div>
 
-    <div class="space-y-4">
+    <div class="space-y-4 lg:grid lg:grid-cols-2 lg:gap-5 lg:space-y-0">
       {steps.map(step => (
         <div class="card-dark flex gap-4 items-start relative overflow-hidden">
           <!-- Background number -->

@@ -2,46 +2,95 @@
 import data from '../content/hero.json';
 import videos from '../content/videos.json';
 ---
-<section class="relative bg-[#0a0a0a] overflow-hidden pt-6 pb-10">
-  <div class="absolute inset-0 pointer-events-none">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#cc1a1a]/20 rounded-full blur-[100px]"></div>
+
+<section class="relative overflow-hidden bg-[#110008] pb-12" style="padding-top:0;">
+
+  <!-- ── Navbar (inside hero so bg matches) ── -->
+  <div class="hero-nav" style="margin-top:36px;">
+    <div style="width:44px;"></div>
+    <a href="#" class="hero-nav-logo">
+      <img src="/logo.png" alt="AI Guy" style="height:52px;width:auto;object-fit:contain;" />
+    </a>
+    <button class="hero-nav-burger" id="nav-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 
-  <div class="relative z-10 max-w-lg mx-auto px-4 text-center">
-    <div class="section-tag mb-4">🚀 {data.tag}</div>
+  <!-- Right-side drawer -->
+  <div class="nav-drawer" id="nav-drawer">
+    <div class="nav-drawer-header">
+      <button class="nav-drawer-close" id="nav-close" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="nav-drawer-links">
+      <a href="#how-it-works"  class="nav-drawer-link">How It Works</a>
+      <a href="#modules"       class="nav-drawer-link">Modules</a>
+      <a href="#community"     class="nav-drawer-link">Community</a>
+      <a href="#testimonials"  class="nav-drawer-link">Testimonials</a>
+      <a href="#faq"           class="nav-drawer-link">FAQ</a>
+    </nav>
+  </div>
+  <div class="nav-backdrop" id="nav-backdrop"></div>
 
-    <h1 class="font-['Oswald'] text-4xl md:text-5xl font-bold uppercase leading-tight text-white mb-4">
-      {data.headline1}<br/>
-      <span class="text-[#ff1f5e]">{data.headline_accent1}</span> {data.headline2}<br/>
-      <span class="text-[#00d4b4]">{data.headline_accent2}</span>
-    </h1>
+  <script>
+    const toggle   = document.getElementById('nav-toggle');
+    const drawer   = document.getElementById('nav-drawer');
+    const backdrop = document.getElementById('nav-backdrop');
+    const closeBtn = document.getElementById('nav-close');
 
-    <p class="text-gray-300 text-base mb-3 leading-relaxed">
-      {data.subheadline}
-    </p>
+    function openNav()  { drawer?.classList.add('open'); backdrop?.classList.add('open'); toggle?.classList.add('open'); }
+    function closeNav() { drawer?.classList.remove('open'); backdrop?.classList.remove('open'); toggle?.classList.remove('open'); }
 
-    <!-- Two audience pills -->
-    <div class="flex flex-col sm:flex-row gap-2 justify-center mb-6">
-      <div class="flex items-center gap-2 bg-[#111] border border-[#ff1f5e]/30 rounded-xl px-4 py-2.5 text-left">
-        <span class="text-xl shrink-0">🏪</span>
-        <div>
-          <p class="text-white text-xs font-bold">For Brands & Marketers</p>
-          <p class="text-gray-500 text-[11px]">Cut content costs. Scale production.</p>
-        </div>
-      </div>
-      <div class="flex items-center gap-2 bg-[#111] border border-[#00d4b4]/30 rounded-xl px-4 py-2.5 text-left">
-        <span class="text-xl shrink-0">🎯</span>
-        <div>
-          <p class="text-white text-xs font-bold">For Individuals & Beginners</p>
-          <p class="text-gray-500 text-[11px]">Learn a high-income skill. Get clients.</p>
+    toggle?.addEventListener('click', openNav);
+    closeBtn?.addEventListener('click', closeNav);
+    backdrop?.addEventListener('click', closeNav);
+    document.querySelectorAll('.nav-drawer-link').forEach(l => l.addEventListener('click', closeNav));
+  </script>
+
+  <!-- Background radial glow -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full"
+      style="background: radial-gradient(ellipse at center, rgba(160,0,40,0.45) 0%, rgba(80,0,20,0.2) 50%, transparent 75%);"></div>
+  </div>
+
+  <div class="relative z-10 max-w-lg lg:max-w-5xl mx-auto px-4 lg:px-8">
+    <div class="text-center">
+
+    <!-- Shiny animated border pill -->
+    <div class="flex justify-center mb-6">
+      <div class="shiny-pill-wrapper">
+        <div class="shiny-pill-rotator"></div>
+        <div class="shiny-pill-inner flex items-center gap-2.5 px-4 py-2">
+          <div class="flex -space-x-2 shrink-0">
+            <div class="w-7 h-7 rounded-full border border-[#FF2C57] bg-gradient-to-br from-orange-400 to-red-600 flex items-center justify-center text-[11px]">😊</div>
+            <div class="w-7 h-7 rounded-full border border-[#FF2C57] bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center text-[11px]">😊</div>
+            <div class="w-7 h-7 rounded-full border border-[#FF2C57] bg-gradient-to-br from-green-400 to-teal-600 flex items-center justify-center text-[11px]">😊</div>
+          </div>
+          <span class="text-white text-[13px] font-medium whitespace-nowrap">{data.tag}</span>
+          <span class="text-[#FF2C57] font-bold text-[11px] leading-none shrink-0">→</span>
         </div>
       </div>
     </div>
 
-    <!-- Hero visual: video if set, else image, else placeholder -->
-    <div class="relative mx-auto mb-6 w-full max-w-sm">
-      {videos.hero_video ? (
-        <div class="rounded-2xl overflow-hidden aspect-video">
+    <!-- Hero Headline -->
+    <h1 class="font-['FuturaPTCond'] font-bold uppercase text-white mb-6 leading-[1.05] px-2" style="font-size: clamp(2.4rem, 7vw, 5rem);">
+      {data.headline1}<br/>
+      <span class="text-[#FF2C57]">{data.headline_accent}</span> {data.headline2}<br/>
+      {data.headline3}
+    </h1>
+
+    <!-- Video Card — full width on desktop -->
+    <div class="relative mx-auto mb-6 w-full lg:max-w-4xl">
+      <!-- Outer glow layers -->
+      <div class="absolute -inset-3 rounded-3xl video-glow-outer"
+        style="background: radial-gradient(ellipse at center, rgba(255,44,87,0.55) 0%, rgba(180,0,40,0.3) 50%, transparent 75%); filter: blur(18px);"></div>
+      <div class="absolute -inset-1 rounded-3xl video-glow-inner"
+        style="background: linear-gradient(135deg, #FF2C57 0%, #ff6b35 50%, #FF2C57 100%); filter: blur(8px);"></div>
+
+      <!-- Video container -->
+      <div class="relative rounded-3xl overflow-hidden border border-[#FF2C57]/60 bg-[#1a0010]"
+        style="aspect-ratio: 16/9;">
+
+        {videos.hero_video ? (
           <iframe
             src={videos.hero_video}
             class="w-full h-full"
@@ -49,50 +98,413 @@ import videos from '../content/videos.json';
             allow="autoplay; fullscreen"
             allowfullscreen
           />
-        </div>
-      ) : data.hero_image ? (
-        <img
-          src={data.hero_image}
-          alt="AI Content Sample"
-          class="w-full rounded-2xl border border-[#2e2e2e] object-cover aspect-[4/3]"
-        />
-      ) : (
-        <div class="bg-[#1a1a1a] border border-[#2e2e2e] rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center">
-          <div class="text-center text-gray-500">
-            <div class="text-5xl mb-3">🖼️</div>
-            <p class="text-sm font-medium text-gray-400">Before / After AI Content Sample</p>
-            <p class="text-xs text-gray-600 mt-1">[Upload image or video in CMS]</p>
+        ) : data.hero_image ? (
+          <img
+            src={data.hero_image}
+            alt="AI Content"
+            class="w-full h-full object-cover"
+          />
+        ) : (
+          <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#2a0015] to-[#1a0008]">
+            <!-- Play button -->
+            <div class="w-16 h-16 rounded-full bg-[#FF2C57] flex items-center justify-center shadow-[0_0_30px_rgba(255,44,87,0.7)] cursor-pointer">
+              <svg class="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
           </div>
-        </div>
-      )}
-      <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#ff1f5e] text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap shadow-lg">
-        🎓 {data.student_count} Students Already Enrolled
+        )}
+
+        <!-- Scattered student avatar circles (decorative) -->
+        <div class="absolute top-3 left-4 w-11 h-11 lg:w-16 lg:h-16 rounded-full border-2 border-white/60 bg-gradient-to-br from-orange-400 to-red-500 overflow-hidden flex items-center justify-center text-sm shadow-lg">😊</div>
+        <div class="absolute top-6 right-5 w-12 h-12 lg:w-16 lg:h-16 rounded-full border-2 border-white/60 bg-gradient-to-br from-blue-400 to-indigo-600 overflow-hidden flex items-center justify-center text-sm shadow-lg">😊</div>
+        <div class="absolute top-1/3 left-2 w-10 h-10 lg:w-14 lg:h-14 rounded-full border-2 border-white/60 bg-gradient-to-br from-purple-400 to-pink-600 overflow-hidden flex items-center justify-center text-xs shadow-lg">😊</div>
+        <div class="absolute top-1/3 right-2 w-11 h-11 lg:w-14 lg:h-14 rounded-full border-2 border-white/60 bg-gradient-to-br from-green-400 to-teal-500 overflow-hidden flex items-center justify-center text-sm shadow-lg">😊</div>
+        <div class="absolute bottom-8 left-3 w-12 h-12 lg:w-16 lg:h-16 rounded-full border-2 border-white/60 bg-gradient-to-br from-yellow-400 to-orange-500 overflow-hidden flex items-center justify-center text-sm shadow-lg">😊</div>
+        <div class="absolute bottom-6 right-4 w-10 h-10 lg:w-14 lg:h-14 rounded-full border-2 border-white/60 bg-gradient-to-br from-red-400 to-rose-600 overflow-hidden flex items-center justify-center text-xs shadow-lg">😊</div>
+        <div class="absolute bottom-16 left-1/2 -translate-x-1/2 translate-x-16 w-9 h-9 lg:w-12 lg:h-12 rounded-full border-2 border-white/60 bg-gradient-to-br from-cyan-400 to-blue-500 overflow-hidden flex items-center justify-center text-xs shadow-lg">😊</div>
       </div>
     </div>
 
-    <!-- 5 offerings pills -->
-    <div class="flex flex-wrap justify-center gap-2 mt-6 mb-5">
-      {["🖼️ AI Product Photos", "🎬 AI Videos", "👤 AI Influencers", "🎙️ AI Voice", "🤖 AI Avatars"].map(tag => (
-        <span class="bg-[#111] border border-[#2e2e2e] text-gray-300 text-xs px-3 py-1.5 rounded-full font-medium">{tag}</span>
-      ))}
+    <!-- CTA Button -->
+    <div class="flex justify-center mb-4">
+      <a href="#pricing" class="hero-cta-btn font-['FuturaPTCond'] font-bold uppercase tracking-wide text-white text-xl lg:text-2xl py-4 px-16">
+        {data.cta_text}
+      </a>
     </div>
 
-    <!-- Social proof -->
-    <div class="flex items-center justify-center gap-3 mb-6">
-      <div class="flex -space-x-2">
-        <div class="w-8 h-8 rounded-full bg-[#333] border-2 border-[#cc1a1a] flex items-center justify-center text-xs">👤</div>
-        <div class="w-8 h-8 rounded-full bg-[#444] border-2 border-[#cc1a1a] flex items-center justify-center text-xs">👤</div>
-        <div class="w-8 h-8 rounded-full bg-[#555] border-2 border-[#cc1a1a] flex items-center justify-center text-xs">👤</div>
+    <!-- Social proof row -->
+    <div class="flex items-center justify-center gap-3 mb-8">
+      <div class="flex -space-x-2 shrink-0">
+        <div class="w-8 h-8 rounded-full border-2 border-[#FF2C57] bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-xs">😊</div>
+        <div class="w-8 h-8 rounded-full border-2 border-[#FF2C57] bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center text-xs">😊</div>
+        <div class="w-8 h-8 rounded-full border-2 border-[#FF2C57] bg-gradient-to-br from-green-400 to-teal-500 flex items-center justify-center text-xs">😊</div>
+        <div class="w-8 h-8 rounded-full border-2 border-[#FF2C57] bg-[#FF2C57] flex items-center justify-center text-[10px] font-bold text-white">2k+</div>
       </div>
       <div class="text-left">
-        <div class="flex text-[#f59e0b] text-xs">★★★★★</div>
-        <p class="text-gray-400 text-xs">Brands, marketers & creators</p>
+        <div class="text-[#f59e0b] text-sm tracking-tight">★★★★★</div>
+        <p class="text-gray-400 text-xs">Join {data.student_count} business owners</p>
       </div>
     </div>
 
-    <a href="#pricing" class="btn-primary w-full block text-center text-xl py-5 shadow-[0_0_30px_rgba(255,31,94,0.4)]">
-      {data.cta_text}
-    </a>
-    <p class="text-gray-500 text-xs mt-3">{data.disclaimer}</p>
+    </div><!-- end text-center -->
   </div>
+
+  <!-- Proof bar: static items, animated lines centered with edge fade -->
+  <div class="proof-bar">
+    <div class="proof-inner">
+      <!-- Top line: moves right -->
+      <div class="proof-line-wrap">
+        <div class="proof-line proof-line--right"></div>
+      </div>
+
+      <!-- Static items -->
+      <div class="proof-items-row">
+        {data.proof_items.map((item) => (
+          <div class="proof-item">
+            <img src="/checkmark.png" class="proof-check" alt="✓" />
+            <span class="proof-text">{item}</span>
+          </div>
+        ))}
+      </div>
+
+      <!-- Bottom line: moves left -->
+      <div class="proof-line-wrap">
+        <div class="proof-line proof-line--left"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom fade — blends hero into next section -->
+  <div class="hero-bottom-fade" aria-hidden="true"></div>
+
 </section>
+
+<style>
+  /* ── Navbar ── */
+  .hero-nav {
+    position: relative;
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 72px;
+    margin-bottom: 24px;
+  }
+  .hero-nav-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .hero-nav-burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    transition: background 0.2s;
+  }
+  .hero-nav-burger:hover { background: rgba(255,255,255,0.14); }
+  .hero-nav-burger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+    transform-origin: center;
+  }
+  .hero-nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hero-nav-burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .hero-nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ── Right-side drawer ── */
+  .nav-drawer {
+    position: fixed;
+    top: 36px; right: 0;
+    width: 260px;
+    height: auto;
+    z-index: 70;
+    background: #0f0a10;
+    border-left: 1px solid rgba(255,44,87,0.2);
+    border-bottom: 1px solid rgba(255,44,87,0.2);
+    border-bottom-left-radius: 16px;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-drawer.open { transform: translateX(0); }
+
+  .nav-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px 20px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-drawer-close {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  .nav-drawer-close:hover { background: rgba(255,44,87,0.2); }
+
+  .nav-drawer-links {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0;
+    flex: 1;
+  }
+  .nav-drawer-link {
+    font-family: 'FuturaPTCond', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #ccc;
+    text-decoration: none;
+    padding: 16px 28px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: color 0.15s, background 0.15s, padding-left 0.2s;
+  }
+  .nav-drawer-link:last-child { border-bottom: none; }
+  .nav-drawer-link:hover { color: #FF2C57; background: rgba(255,44,87,0.05); padding-left: 36px; }
+
+  /* ── Backdrop ── */
+  .nav-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 69;
+    background: transparent;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .nav-backdrop.open { display: block; opacity: 1; }
+
+  @font-face {
+    font-family: 'Gilmer';
+    src: url('/fonts/gilmer-medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+  }
+
+  /* Shiny rotating border pill */
+  .shiny-pill-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 1.5px;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+
+  .shiny-pill-rotator {
+    position: absolute;
+    inset: -200%;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 55deg,
+      #FF2C57 85deg,
+      #ff8c5a 105deg,
+      #ffffff 125deg,
+      #ff8c5a 145deg,
+      #FF2C57 165deg,
+      transparent 195deg,
+      transparent 360deg
+    );
+    animation: shiny-spin 3s linear infinite;
+  }
+
+  .shiny-pill-inner {
+    position: relative;
+    z-index: 1;
+    background: rgba(30, 0, 15, 0.85);
+    border-radius: 9999px;
+    backdrop-filter: blur(4px);
+  }
+
+  @keyframes shiny-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  /* CTA Button */
+  .hero-cta-btn {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #FF2C57 0%, #ff4d6d 100%);
+    box-shadow: 0 0 40px rgba(255, 44, 87, 0.6), 0 4px 20px rgba(255, 44, 87, 0.4);
+    transition: box-shadow 0.2s;
+    text-align: center;
+    display: inline-block;
+  }
+  .hero-cta-btn:hover {
+    box-shadow: 0 0 55px rgba(255, 44, 87, 0.75), 0 4px 24px rgba(255, 44, 87, 0.5);
+  }
+
+  /* Shimmer sweep right-to-left */
+  .hero-cta-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -80%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      105deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.18) 40%,
+      rgba(255, 255, 255, 0.38) 50%,
+      rgba(255, 255, 255, 0.18) 60%,
+      transparent 80%
+    );
+    transform: skewX(-15deg);
+    animation: btn-shimmer 2.4s ease-in-out infinite;
+  }
+
+  @keyframes btn-shimmer {
+    0%   { right: -80%; }
+    100% { right: 120%; }
+  }
+
+  /* ── Proof bar ── */
+  .proof-bar {
+    width: 100%;
+    margin-top: 32px;
+    margin-bottom: 0;
+    background: transparent;
+  }
+
+  /* Centered container — lines and items live here */
+  .proof-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* Line wrapper: applies edge-fade mask */
+  .proof-line-wrap {
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%);
+  }
+
+  /* The animated glowing line */
+  .proof-line {
+    width: 100%;
+    height: 2px;
+    background-size: 200% 100%;
+    background-image: linear-gradient(
+      90deg,
+      #3a0010 0%,
+      #FF2C57 25%,
+      #ff8c6a 50%,
+      #FF2C57 75%,
+      #3a0010 100%
+    );
+    box-shadow: 0 0 6px 1px rgba(255, 44, 87, 0.7), 0 0 14px 2px rgba(255, 44, 87, 0.3);
+  }
+
+  .proof-line--right {
+    animation: line-right 3s linear infinite;
+  }
+  .proof-line--left {
+    animation: line-left 3s linear infinite;
+  }
+
+  /* Static items row */
+  .proof-items-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%);
+  }
+
+  .proof-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 32px;
+    border-right: 1px solid rgba(255, 44, 87, 0.25);
+  }
+  .proof-item:last-child {
+    border-right: none;
+  }
+
+  .proof-check {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    filter: brightness(0) saturate(100%) invert(22%) sepia(96%) saturate(4000%) hue-rotate(333deg) brightness(105%);
+  }
+
+  .proof-text {
+    font-family: 'Gilmer', sans-serif;
+    font-weight: 500;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+    line-height: 1.3;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  /* Line shimmer moves right */
+  @keyframes line-right {
+    0%   { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+  }
+  /* Line shimmer moves left */
+  @keyframes line-left {
+    0%   { background-position: 200% 0%; }
+    100% { background-position: 0% 0%; }
+  }
+
+  /* Bottom section fade */
+  .hero-bottom-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent 0%, #0a0a0a 100%);
+    pointer-events: none;
+    z-index: 20;
+  }
+
+  /* Video glow pulse */
+  .video-glow-outer {
+    animation: video-pulse 2.8s ease-in-out infinite;
+  }
+  .video-glow-inner {
+    animation: video-pulse 2.8s ease-in-out infinite 0.4s;
+  }
+  @keyframes video-pulse {
+    0%, 100% { opacity: 0.15; }
+    50%       { opacity: 1; }
+  }
+</style>

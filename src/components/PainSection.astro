@@ -1,75 +1,118 @@
 ---
 const costs = [
-  { label: "Product Photography Shoot", traditional: "Rs. 30,000 – 150,000", icon: "📸" },
-  { label: "Influencer Post (1 post)", traditional: "Rs. 20,000 – 500,000", icon: "👤" },
-  { label: "Video Production (1 ad)", traditional: "Rs. 50,000 – 200,000", icon: "🎬" },
-  { label: "Model Fees (per shoot)", traditional: "Rs. 15,000 – 80,000", icon: "💃" },
+  { label: "Product Photography Shoot", price: "Rs. 30,000 – 150,000", icon: "📸" },
+  { label: "Influencer Post (1 post)",   price: "Rs. 20,000 – 500,000", icon: "👤" },
+  { label: "Video Production (1 ad)",    price: "Rs. 50,000 – 200,000", icon: "🎬" },
+  { label: "Model Fees (per shoot)",     price: "Rs. 15,000 – 80,000",  icon: "💃" },
 ];
 ---
-<section class="py-14 bg-[#0a0a0a]">
-  <div class="max-w-lg mx-auto px-4">
-    <div class="text-center mb-8">
-      <div class="section-tag">💸 The Real Problem</div>
-      <h2 class="font-['Oswald'] text-3xl font-bold uppercase text-white mt-2">
-        TRADITIONAL CONTENT<br/>
-        IS <span class="text-[#ff1f5e]">DRAINING YOUR BUDGET</span>
-      </h2>
-      <p class="text-gray-400 text-sm mt-3 leading-relaxed">
-        Every time you need fresh content for your brand, you're burning money on shoots, models, and influencers.
-      </p>
-    </div>
 
-    <!-- Cost breakdown -->
-    <div class="space-y-3 mb-6">
+<section class="py-14 bg-[#0a0a0a]">
+  <div class="max-w-lg lg:max-w-4xl mx-auto px-4 lg:px-8">
+
+    <!-- Headline -->
+    <h2 class="font-['FuturaPTCond'] font-bold uppercase text-center text-white leading-tight mb-4"
+        style="font-size: clamp(2.6rem, 8vw, 5rem);">
+      TRADITIONAL CONTENT<br/>
+      IS <span class="text-[#FF2C57]">DRAINING YOUR BUDGET</span>
+    </h2>
+
+    <!-- Subtitle -->
+    <p class="text-gray-400 text-sm lg:text-base text-center leading-relaxed mb-10 max-w-lg mx-auto">
+      Every time you need fresh content for your brand, you're burning money on shoots, models, and influencers.
+    </p>
+
+    <!-- Cost cards -->
+    <div class="space-y-3 mb-5">
       {costs.map(c => (
-        <div class="card-dark flex items-center gap-4">
-          <span class="text-2xl shrink-0">{c.icon}</span>
+        <div class="cost-card flex items-center gap-5 px-6 py-5 rounded-2xl">
+          <span class="text-3xl shrink-0">{c.icon}</span>
           <div class="flex-1 min-w-0">
-            <p class="text-white text-sm font-medium truncate">{c.label}</p>
-            <p class="text-[#ff1f5e] text-xs font-bold mt-0.5">{c.traditional}</p>
+            <p class="font-['FuturaPTCond'] text-white font-bold text-lg lg:text-xl uppercase tracking-wide leading-tight">{c.label}</p>
+            <p class="text-[#FF2C57] text-base font-bold mt-1">{c.price}</p>
           </div>
-          <div class="shrink-0 text-[#cc1a1a] text-lg font-bold">↑</div>
+          <!-- Red up arrow -->
+          <svg class="w-6 h-6 shrink-0 text-[#FF2C57]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+          </svg>
         </div>
       ))}
     </div>
 
-    <!-- Total callout -->
-    <div class="rounded-2xl bg-gradient-to-br from-[#1a0808] to-[#0a0a0a] border border-[#cc1a1a]/30 p-5 text-center mb-6">
-      <p class="text-gray-400 text-sm mb-1">A single brand campaign can cost you</p>
-      <p class="font-['Oswald'] text-4xl font-bold text-[#ff1f5e]">Rs. 100,000+</p>
-      <p class="text-gray-500 text-sm mt-1">…and that's just for a few pieces of content</p>
+    <!-- Total callout — moving star-tail border -->
+    <div class="star-border-wrap rounded-2xl">
+      <div class="total-callout rounded-2xl p-6 lg:p-8 text-center">
+        <p class="text-gray-400 text-sm lg:text-base mb-2">A single brand campaign can cost you</p>
+        <p class="font-['FuturaPTCond'] font-bold text-[#FF2C57] leading-none my-3"
+           style="font-size: clamp(2.6rem, 9vw, 4.5rem);">Rs. 100,000+</p>
+        <p class="text-gray-500 text-sm lg:text-base">...and that's just for a few pieces of content</p>
+      </div>
     </div>
 
-    <!-- VS divider -->
-    <div class="flex items-center gap-4 mb-6">
-      <div class="flex-1 h-px bg-[#1e1e1e]"></div>
-      <span class="font-['Oswald'] text-xl font-bold text-gray-500">VS</span>
-      <div class="flex-1 h-px bg-[#1e1e1e]"></div>
-    </div>
-
-    <!-- AI solution callout -->
-    <div class="rounded-2xl bg-gradient-to-br from-[#081a10] to-[#0a0a0a] border border-[#00d4b4]/30 p-5 text-center">
-      <p class="text-gray-400 text-sm mb-1">With AI Guy mentorship, you learn to do it all for</p>
-      <p class="font-['Oswald'] text-4xl font-bold text-[#00d4b4]">4,999 PKR</p>
-      <p class="text-[#00d4b4] text-sm font-bold mt-1">One-time · Unlimited content · Forever</p>
-      <ul class="mt-4 space-y-2 text-left">
-        {[
-          "No studio. No photographer. No model.",
-          "No influencer deals. No waiting. No overpaying.",
-          "Create unlimited AI content for any product, anytime.",
-        ].map(item => (
-          <li class="flex items-start gap-2 text-sm text-gray-300">
-            <span class="text-[#00d4b4] shrink-0">✓</span>
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    <div class="mt-8 text-center">
-      <a href="#pricing" class="btn-primary w-full block text-lg py-4">
-        START CREATING AI CONTENT →
-      </a>
-    </div>
   </div>
 </section>
+
+<style>
+  /* ── Tag ── */
+  .real-problem-tag {
+    display: inline-block;
+    background: #FF2C57;
+    color: white;
+    font-family: 'FuturaPTCond', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 8px 24px;
+    border-radius: 9999px;
+  }
+
+  /* ── Cost cards ── */
+  .cost-card {
+    background: #111111;
+    border: 1px solid #1e1e1e;
+  }
+
+  /* ── Star-tail border wrapper ── */
+  .star-border-wrap {
+    position: relative;
+    padding: 1.5px;
+    overflow: hidden;
+    /* base border colour — the star tail sweeps over this */
+    background: rgba(255, 44, 87, 0.25);
+  }
+
+  /* The moving bright star-tail */
+  .star-border-wrap::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 44, 87, 0.15) 20%,
+      rgba(255, 140, 100, 0.6) 45%,
+      rgba(255, 255, 255, 0.95) 50%,
+      rgba(255, 140, 100, 0.6) 55%,
+      rgba(255, 44, 87, 0.15) 80%,
+      transparent 100%
+    );
+    filter: blur(3px);
+    animation: star-tail 2.2s linear infinite;
+  }
+
+  @keyframes star-tail {
+    0%   { left: -60%; }
+    100% { left: 120%; }
+  }
+
+  /* Inner callout fills the wrapper (1.5px gap = the "border") */
+  .total-callout {
+    background: linear-gradient(135deg, #1a0608 0%, #110406 100%);
+    position: relative;
+    z-index: 1;
+  }
+</style>

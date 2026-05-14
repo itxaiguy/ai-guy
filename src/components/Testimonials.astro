@@ -2,7 +2,7 @@
 import data from '../content/testimonials.json';
 ---
 <section id="testimonials" class="py-14 bg-[#0d0d0d]">
-  <div class="max-w-lg mx-auto px-4">
+  <div class="max-w-lg lg:max-w-6xl mx-auto px-4 lg:px-8">
     <div class="text-center mb-10">
       <div class="section-tag">⭐ Success Stories</div>
       <h2 class="font-['Oswald'] text-3xl font-bold uppercase text-white mt-2">
@@ -25,7 +25,7 @@ import data from '../content/testimonials.json';
     </div>
 
     <!-- Student testimonials -->
-    <div class="space-y-3">
+    <div class="space-y-3 lg:grid lg:grid-cols-2 lg:gap-5 lg:space-y-0">
       {data.testimonials.map(t => (
         <div class="card-dark">
           <div class="flex items-center gap-3 mb-3">

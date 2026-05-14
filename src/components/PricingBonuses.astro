@@ -1,0 +1,200 @@
+---
+const topBonuses = [
+  {
+    img: null,
+    imgEmoji: "🎬",
+    imgBg: "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)",
+    imgAccent: "#FF2C57",
+    title: "Tiktok CRP Mastery Video Lessons",
+    desc: "Complete 8 lessons program showing you EXACTLY how to create accounts, post content, and get monetized.",
+    badge: "VALUE: 15,000 PKR",
+    badgeType: "value",
+  },
+  {
+    img: null,
+    imgEmoji: "🤖",
+    imgBg: "linear-gradient(135deg, #001a10 0%, #003320 100%)",
+    imgAccent: "#00d4b4",
+    title: "BONUS: ChatGPT for TikTok Creators",
+    desc: "Learn how to use AI to generate viral content ideas and captions that grab attention.",
+    badge: "VALUE: 8,000 PKR",
+    badgeType: "value",
+  },
+  {
+    img: null,
+    imgEmoji: "💬",
+    imgBg: "linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%)",
+    imgAccent: "#5865F2",
+    title: "Exclusive Discord Community Access",
+    desc: "Pakistan's first-ever CRP community with 24/7 support, weekly live calls, account analysis, and networking opportunities.",
+    badge: "VALUE: 12,000 PKR",
+    badgeType: "value",
+  },
+];
+
+const freeBonus = [
+  {
+    img: null,
+    imgEmoji: "📦",
+    imgBg: "linear-gradient(135deg, #0a0a0a 0%, #1a1a0a 100%)",
+    imgAccent: "#f59e0b",
+    title: "TikTok Resource Vault",
+    desc: "Access to essential resources 100+ TikTok sounds and music. BDM video templates. TikTok trend tracker.",
+    badge: "FREE BONUS",
+    badgeType: "free",
+  },
+  {
+    img: null,
+    imgEmoji: "🔍",
+    imgBg: "linear-gradient(135deg, #1a0a10 0%, #2a0d18 100%)",
+    imgAccent: "#FF2C57",
+    title: "Account Analysis by Mentors",
+    desc: "Personalized feedback from mentors who will analyze your TikTok account and boost your monetization chances.",
+    badge: "FREE BONUS",
+    badgeType: "free",
+  },
+  {
+    img: null,
+    imgEmoji: "✂️",
+    imgBg: "linear-gradient(135deg, #001a1a 0%, #002a2a 100%)",
+    imgAccent: "#00d4b4",
+    title: "Basic Video Editing Lessons",
+    desc: "Access to basic video editing services to enhance your TikTok content and give it a professional edge.",
+    badge: "FREE BONUS",
+    badgeType: "free",
+  },
+];
+
+const allCards = [...topBonuses, ...freeBonus];
+---
+
+<section class="pb-section py-14 px-4">
+  <div class="max-w-lg lg:max-w-6xl mx-auto">
+
+    <!-- Headline -->
+    <div class="text-center mb-10">
+      <h2 class="font-['FuturaPTCond'] font-bold uppercase leading-tight"
+          style="font-size: clamp(2.6rem, 6vw, 4.5rem); color:#ffffff;">
+        AND NOW FOR THE <span style="color:#FF2C57;">PRICING</span>
+      </h2>
+      <p class="text-gray-400 mt-3 text-base lg:text-lg">For Less Than the Price of One Dinner Out!</p>
+    </div>
+
+    <!-- 3-col grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {allCards.map((card) => (
+        <div class="pb-card">
+
+          <!-- Image / visual area -->
+          <div class="pb-card-img" style={`background:${card.imgBg};`}>
+            <div class="pb-card-emoji" style={`color:${card.imgAccent};`}>{card.imgEmoji}</div>
+            <!-- Accent glow -->
+            <div class="pb-card-glow" style={`background:${card.imgAccent};`}></div>
+          </div>
+
+          <!-- Content area -->
+          <div class="pb-card-body">
+            <h3 class="pb-card-title" style={`color:${card.imgAccent};`}>{card.title}</h3>
+            <p class="pb-card-desc">{card.desc}</p>
+            <div class={`pb-badge ${card.badgeType === 'free' ? 'pb-badge--free' : 'pb-badge--value'}`}>
+              {card.badge}
+            </div>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .pb-section {
+    background: #0a0a0a;
+  }
+
+  /* Card */
+  .pb-card {
+    background: #111111;
+    border: 1px solid #1e1e1e;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s;
+  }
+  .pb-card:hover {
+    border-color: #2e2e2e;
+  }
+
+  /* Image section */
+  .pb-card-img {
+    position: relative;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .pb-card-emoji {
+    font-size: 3.5rem;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 0 16px currentColor);
+  }
+  .pb-card-glow {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 60px;
+    border-radius: 50%;
+    opacity: 0.18;
+    filter: blur(20px);
+    z-index: 1;
+  }
+
+  /* Content */
+  .pb-card-body {
+    padding: 18px 20px 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .pb-card-title {
+    font-family: 'FuturaPTCond', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  @media (min-width: 1024px) {
+    .pb-card-title { font-size: 1.35rem; }
+  }
+  .pb-card-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    color: #999;
+    line-height: 1.55;
+    text-align: center;
+    flex: 1;
+    margin-bottom: 16px;
+  }
+
+  /* Badges */
+  .pb-badge {
+    font-family: 'FuturaPTCond', sans-serif;
+    font-weight: 700;
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    color: #FF2C57;
+  }
+  @media (min-width: 1024px) {
+    .pb-badge { font-size: 2.1rem; }
+  }
+</style>

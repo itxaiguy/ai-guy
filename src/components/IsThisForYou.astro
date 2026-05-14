@@ -1,111 +1,68 @@
 ---
 const audiences = [
   {
-    icon: "🏪",
-    title: "Ecom Brand Owners",
-    desc: "Tired of paying Rs. 50,000–200,000 per shoot? Create unlimited AI content yourself at a fraction of the cost.",
-    color: "#ff1f5e",
+    title: "Housewives",
+    desc: "You want to earn from home without heavy investment, using only your phone and internet.",
   },
   {
-    icon: "📣",
-    title: "Marketers & Agencies",
-    desc: "Scale content production for your brands and clients without outsourcing to expensive studios.",
-    color: "#f59e0b",
+    title: "Students",
+    desc: "Turn your free time into extra monthly income by posting simple AI TikTok videos without ads, products, or clients.",
   },
   {
-    icon: "🎯",
-    title: "Individuals & Beginners",
-    desc: "Zero experience? No problem. Learn a high-income skill from scratch and offer AI content services to brands.",
-    color: "#00d4b4",
-  },
-  {
-    icon: "📱",
-    title: "Content Creators",
-    desc: "Start faceless TikTok and YouTube channels using AI content — no camera, no face, no expensive gear.",
-    color: "#a855f7",
-  },
-  {
-    icon: "💼",
     title: "Freelancers",
-    desc: "Add AI content creation to your service offerings and charge premium rates to ecom brands.",
-    color: "#3b82f6",
+    desc: "Stop depending on clients and deadlines. TikTok CRP gives you direct earnings with less stress and more consistency.",
   },
-  {
-    icon: "🚀",
-    title: "Startups",
-    desc: "Limited budget? AI gives you big-brand content quality without the big-brand content bills.",
-    color: "#ec4899",
-  },
-];
-
-const notForYou = [
-  "You expect results without putting in the learning time",
-  "You're looking for a one-click 'magic button' solution",
-  "You're not willing to attend weekly 1-on-1 coaching calls",
 ];
 ---
-<section class="py-14 bg-[#0d0d0d]">
-  <div class="max-w-lg mx-auto px-4">
 
-    <!-- Video placeholder -->
-    <div class="mb-10">
-      <div class="bg-[#111] border border-[#1e1e1e] rounded-2xl overflow-hidden aspect-video flex items-center justify-center">
-        <div class="text-center text-gray-500">
-          <div class="text-5xl mb-3">▶️</div>
-          <p class="text-sm font-medium text-gray-400">Coach Introduction Video</p>
-          <p class="text-xs mt-1 text-gray-600">[Replace with your intro video]</p>
-        </div>
-      </div>
+<section class="bg-[#0a0a0a] pt-16 pb-20">
+  <div class="max-w-lg lg:max-w-6xl mx-auto px-4 lg:px-8">
+
+    <!-- Tag -->
+    <div class="flex justify-center mb-5">
+      <span class="is-this-you-tag">IS THIS YOU?</span>
     </div>
 
-    <div class="text-center mb-8">
-      <div class="section-tag">🎯 Who Is This For?</div>
-      <h2 class="font-['Oswald'] text-3xl font-bold uppercase text-white mt-2">
-        THIS MENTORSHIP IS BUILT<br/>
-        FOR <span class="text-[#ff1f5e]">ALL OF THESE</span> PEOPLE
-      </h2>
-      <p class="text-gray-400 text-sm mt-3">
-        Whether you're running a brand, learning a new skill, or building a content business — this is for you.
-      </p>
-    </div>
+    <!-- Heading -->
+    <h2 class="font-['Oswald'] font-bold uppercase text-white text-center mb-4 leading-tight"
+        style="font-size: clamp(2.8rem, 8vw, 4.5rem);">
+      WHO IS THIS FOR?
+    </h2>
 
-    <!-- Audience grid -->
-    <div class="grid grid-cols-1 gap-3 mb-6">
+    <!-- Subtitle -->
+    <p class="text-center text-gray-400 italic text-base mb-12">See if you can relate.</p>
+
+    <!-- Cards -->
+    <div class="flex flex-col lg:grid lg:grid-cols-3 gap-6">
       {audiences.map(a => (
-        <div class="card-dark flex items-start gap-4" style={`border-color: ${a.color}20;`}>
-          <div
-            class="w-11 h-11 rounded-xl flex items-center justify-center text-xl shrink-0"
-            style={`background: ${a.color}15; border: 1px solid ${a.color}30;`}
-          >
-            {a.icon}
-          </div>
-          <div>
-            <h3 class="font-['Oswald'] font-bold text-white text-base uppercase" style={`color: ${a.color};`}>{a.title}</h3>
-            <p class="text-gray-400 text-sm mt-0.5 leading-relaxed">{a.desc}</p>
-          </div>
+        <div class="audience-card">
+          <h3 class="font-['Oswald'] font-bold text-white uppercase mb-4" style="font-size:clamp(1.6rem,3vw,2rem);">{a.title}</h3>
+          <p class="text-gray-400 text-base lg:text-lg leading-relaxed">{a.desc}</p>
         </div>
       ))}
     </div>
 
-    <!-- NOT for you -->
-    <div class="card-dark border-[#cc1a1a]/20 mb-8">
-      <h3 class="font-['Oswald'] text-lg font-bold text-[#cc1a1a] uppercase mb-4 flex items-center gap-2">
-        <span>❌</span> THIS IS NOT FOR YOU IF...
-      </h3>
-      <ul class="space-y-3">
-        {notForYou.map(item => (
-          <li class="flex items-start gap-3 text-sm text-gray-400">
-            <span class="text-[#cc1a1a] mt-0.5 shrink-0">✗</span>
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    <div class="text-center">
-      <a href="#pricing" class="btn-primary w-full block text-xl py-5">
-        YES — THIS IS FOR ME! ENROLL →
-      </a>
-    </div>
   </div>
 </section>
+
+<style>
+  .is-this-you-tag {
+    display: inline-block;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    border-radius: 9999px;
+    padding: 6px 22px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .audience-card {
+    background: #141414;
+    border: 1px solid #222222;
+    border-radius: 20px;
+    padding: 40px 36px;
+  }
+</style>

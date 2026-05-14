@@ -1,6 +1,6 @@
 backend:
-  name: git-gateway
-  branch: main
+  name: proxy
+  proxy_url: http://localhost:8081/api/v1
 
 media_folder: public/uploads
 public_folder: /uploads
@@ -25,14 +25,18 @@ collections:
         fields:
           - { label: "Tag (pill above headline)", name: "tag", widget: "string" }
           - { label: "Headline Line 1", name: "headline1", widget: "string" }
-          - { label: "Headline Accent (pink)", name: "headline_accent1", widget: "string" }
+          - { label: "Headline Accent (red)", name: "headline_accent", widget: "string" }
           - { label: "Headline Line 2", name: "headline2", widget: "string" }
-          - { label: "Headline Accent 2 (teal)", name: "headline_accent2", widget: "string" }
+          - { label: "Headline Line 3", name: "headline3", widget: "string" }
           - { label: "Subheadline", name: "subheadline", widget: "text" }
-          - { label: "Hero Image", name: "hero_image", widget: "image", required: false, hint: "Before/after product sample image" }
-          - { label: "Student Count Badge", name: "student_count", widget: "string", default: "[X]+" }
+          - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
+          - { label: "Student Count Badge", name: "student_count", widget: "string" }
           - { label: "CTA Button Text", name: "cta_text", widget: "string" }
           - { label: "Disclaimer (below button)", name: "disclaimer", widget: "string" }
+          - label: "Proof Bar Items (3 items)"
+            name: "proof_items"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
 
       # ─── PROOF BAR ───────────────────────────────────────────────────
       - name: "proofbar"

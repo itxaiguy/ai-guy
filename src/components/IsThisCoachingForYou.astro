@@ -1,0 +1,133 @@
+---
+const forItems = [
+  "You want to make real money from TikTok.",
+  "You want to learn easy tricks to get more views.",
+  "You want to keep your account safe.",
+  "You want to join the TikTok CRP even if it's not in Pakistan.",
+  "You're ready to take action and join our weekly coaching calls.",
+  "You want to join a community that helps and supports you.",
+];
+
+const notForItems = [
+  "You think TikTok is just for fun and don't care about earning from it.",
+  "You're looking for shortcuts.",
+  "You don't mind losing your account.",
+  "You think it's too difficult to earn from TikTok.",
+  "You don't want to learn new things.",
+  "You prefer to work alone without any help.",
+];
+---
+
+<section class="itcfy-section py-14 px-4">
+  <div class="max-w-lg lg:max-w-5xl mx-auto">
+
+    <!-- Headline -->
+    <h2 class="font-['FuturaPTCond'] font-bold uppercase text-center leading-tight mb-10"
+        style="font-size: clamp(2.4rem, 6vw, 4rem); color: #ffffff;">
+      IS THIS <span style="color:#FF2C57;">TIKTOK COACHING</span><br/>
+      FOR YOU?
+    </h2>
+
+    <!-- Two cards -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+
+      <!-- FOR YOU card -->
+      <div class="itcfy-card itcfy-card--yes">
+        <h3 class="itcfy-card-title">THIS COACHING IS FOR YOU</h3>
+        <ul class="space-y-3">
+          {forItems.map(item => (
+            <li class="flex items-start gap-3">
+              <span class="shrink-0" style="margin-top:3px;">
+                <svg viewBox="0 0 24 24" fill="none" width="22" height="22">
+                  <circle cx="12" cy="12" r="11" stroke="#22c55e" stroke-width="1.8"/>
+                  <path d="M7 12.5l3.5 3.5 6.5-7" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="itcfy-item-text">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- NOT FOR YOU card -->
+      <div class="itcfy-card itcfy-card--no">
+        <h3 class="itcfy-card-title">THIS COACHING IS NOT FOR YOU</h3>
+        <ul class="space-y-3">
+          {notForItems.map(item => (
+            <li class="flex items-start gap-3">
+              <span class="shrink-0" style="margin-top:3px;">
+                <svg viewBox="0 0 24 24" fill="none" width="22" height="22">
+                  <circle cx="12" cy="12" r="11" stroke="#FF2C57" stroke-width="1.8"/>
+                  <path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#FF2C57" stroke-width="2.2" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="itcfy-item-text">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .itcfy-section {
+    background: #0a0a0a;
+  }
+
+  .itcfy-card {
+    border-radius: 18px;
+    padding: 32px 28px;
+  }
+
+  /* Left card — deep red gradient with prominent red border, matching Figma */
+  .itcfy-card--yes {
+    background: linear-gradient(145deg, #2d0b14 0%, #1a0608 60%, #110407 100%);
+    border: 1.5px solid rgba(255, 44, 87, 0.55);
+    box-shadow: inset 0 0 60px rgba(255, 44, 87, 0.06), 0 0 0 0.5px rgba(255,44,87,0.1);
+  }
+
+  /* Right card — dark charcoal with subtle border */
+  .itcfy-card--no {
+    background: linear-gradient(145deg, #1a1a1a 0%, #111111 100%);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .itcfy-card-title {
+    font-family: 'FuturaPTCond', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 0.03em;
+    color: #ffffff;
+    margin-bottom: 1.4rem;
+    line-height: 1.1;
+  }
+
+  @font-face {
+    font-family: 'Gilmer';
+    src: url('/fonts/gilmer-medium.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  .itcfy-item-text {
+    font-family: 'Gilmer', sans-serif;
+    font-weight: 400;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.5;
+    text-transform: none;
+    font-synthesis: none;
+  }
+
+  @media (min-width: 1024px) {
+    .itcfy-card-title {
+      font-size: 1.65rem;
+    }
+    .itcfy-item-text {
+      font-size: 0.93rem;
+    }
+  }
+</style>

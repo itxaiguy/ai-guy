@@ -3,9 +3,14 @@ import '../styles/global.css';
 import AnnouncementBar from '../components/AnnouncementBar.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
-import ProofBar from '../components/ProofBar.astro';
 import PainSection from '../components/PainSection.astro';
-import ServicesGrid from '../components/ServicesGrid.astro';
+import EasierWay from '../components/EasierWay.astro';
+import WhatYoullLearn from '../components/WhatYoullLearn.astro';
+import IsThisCoachingForYou from '../components/IsThisCoachingForYou.astro';
+import PricingBonuses from '../components/PricingBonuses.astro';
+import PricingOffer from '../components/PricingOffer.astro';
+import MoneyBackGuarantee from '../components/MoneyBackGuarantee.astro';
+import SuccessStories from '../components/SuccessStories.astro';
 import OldVsNew from '../components/OldVsNew.astro';
 import HowItWorks from '../components/HowItWorks.astro';
 import Modules from '../components/Modules.astro';
@@ -39,31 +44,19 @@ import StickyBottomCTA from '../components/StickyBottomCTA.astro';
     <Navbar />
 
     <main>
-      <!-- 3. Hero -->
+      <!-- 3. Hero (outside stack — anchors the page) -->
       <Hero />
-      <!-- 4. Social Proof Bar -->
-      <ProofBar />
-      <!-- 5. Pain — cost of traditional content -->
-      <PainSection />
-      <!-- 6. Services — 5 AI skills -->
-      <ServicesGrid />
-      <!-- 7. Old Way vs New Way -->
-      <OldVsNew />
-      <!-- 8. How the Mentorship Works -->
-      <HowItWorks />
-      <!-- 10. Course Modules -->
-      <Modules />
-      <!-- 11. Testimonials -->
-      <Testimonials />
-      <!-- 12. Who Is This For? -->
+
       <IsThisForYou />
-      <!-- 13. Community -->
-      <Community />
-      <!-- 14. What's Included / Bonuses -->
-      <Bonuses />
-      <!-- 15. Pricing + Countdown -->
-      <Pricing />
-      <!-- 16. FAQ -->
+      <OldVsNew />
+      <PainSection />
+      <EasierWay />
+      <WhatYoullLearn />
+      <IsThisCoachingForYou />
+      <PricingBonuses />
+      <PricingOffer />
+      <MoneyBackGuarantee />
+      <SuccessStories />
       <FAQ />
     </main>
 
@@ -84,5 +77,6 @@ import StickyBottomCTA from '../components/StickyBottomCTA.astro';
         });
       }
     </script>
+
   </body>
 </html>

@@ -1,79 +1,111 @@
 ---
 const oldWay = [
-  "Pay Rs. 30,000–150,000 per product shoot",
-  "Book studios, photographers & models weeks in advance",
-  "Wait days/weeks for edited content",
-  "Pay influencers Rs. 20,000–500,000 per post",
-  "Limited content variations per shoot",
-  "Re-shoot every time products or seasons change",
-  "Overpay for video production agencies",
+  "YouTube: Slow Growth",
+  "Shopify: Ads & Products",
+  "Copywriting: Heavy Competition",
+  "Freelancing: Client Stress",
+  "Amazon FBA: High risk, high investment",
 ];
 
 const newWay = [
-  "Create unlimited product photos for free, after learning",
-  "No studio, no bookings — create from your laptop",
-  "Content ready in hours, not weeks",
-  "AI influencers that work for you 24/7 at zero per-post cost",
-  "Infinite variations, angles, backgrounds & styles",
-  "Update content anytime — instantly",
-  "Produce professional brand videos yourself",
+  "Post simple TikTok videos and earn fast",
+  "No Ads, No Products",
+  "Easy AI Content",
+  "Freelancing: Client stress and delays",
+  "Zero Investment",
 ];
 ---
-<section class="py-14 bg-[#0a0a0a]">
-  <div class="max-w-lg mx-auto px-4">
-    <div class="text-center mb-10">
-      <div class="section-tag">💡 The Shift</div>
-      <h2 class="font-['Oswald'] text-3xl font-bold uppercase text-white mt-2">
-        THE OLD WAY IS<br/>
-        <span class="text-[#ff1f5e]">COSTING YOU TOO MUCH</span>
-      </h2>
-      <p class="text-gray-400 text-sm mt-3">
-        AI is changing content creation. Here's what smart brands are switching to.
-      </p>
+
+<section class="bg-[#0a0a0a] py-14">
+  <div class="max-w-lg lg:max-w-7xl mx-auto px-4 lg:px-8">
+
+    <!-- Heading: FuturaPTCond -->
+    <h2 class="font-['FuturaPTCond'] font-bold uppercase text-center text-white leading-tight mb-8"
+        style="font-size: clamp(2rem, 6vw, 4rem);">
+      OLD WAY VS <span class="text-[#FF2C57]">NEW WAY</span>
+    </h2>
+
+    <!-- Cards: stacked on mobile, 3-col on desktop (card | VS | card) -->
+    <div class="flex flex-col lg:grid lg:items-stretch" style="grid-template-columns: 1fr 80px 1fr; gap: 0 16px;">
+
+    <!-- OLD WAY card -->
+    <div class="oldway-card rounded-2xl p-6 lg:p-10 mb-4 lg:mb-0">
+      <ul class="space-y-5 lg:space-y-7">
+        {oldWay.map(item => (
+          <li class="flex items-center gap-4">
+            <span class="shrink-0">
+              <svg width="28" height="28" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="9" stroke="#FF2C57" stroke-width="1.5"/>
+                <path d="M7 7L13 13M13 7L7 13" stroke="#FF2C57" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span class="font-['FuturaPTCond'] text-white text-base lg:text-xl leading-snug tracking-wide">{item}</span>
+          </li>
+        ))}
+      </ul>
     </div>
 
-    <div class="grid grid-cols-2 gap-4">
-      <!-- Old Way -->
-      <div class="rounded-2xl border border-[#cc1a1a]/30 bg-[#110808] p-4">
-        <div class="flex items-center gap-2 mb-4">
-          <div class="w-7 h-7 rounded-full bg-[#cc1a1a]/20 flex items-center justify-center text-sm">❌</div>
-          <p class="font-['Oswald'] font-bold text-[#cc1a1a] text-sm uppercase tracking-wide">Old Way</p>
-        </div>
-        <ul class="space-y-3">
-          {oldWay.map(item => (
-            <li class="flex items-start gap-2 text-xs text-gray-400 leading-snug">
-              <span class="text-[#cc1a1a] shrink-0 mt-0.5">✗</span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <!-- New Way -->
-      <div class="rounded-2xl border border-[#00d4b4]/30 bg-[#08110f] p-4 relative overflow-hidden">
-        <div class="absolute inset-0 bg-[#00d4b4]/5 pointer-events-none rounded-2xl"></div>
-        <div class="relative z-10">
-          <div class="flex items-center gap-2 mb-4">
-            <div class="w-7 h-7 rounded-full bg-[#00d4b4]/20 flex items-center justify-center text-sm">✅</div>
-            <p class="font-['Oswald'] font-bold text-[#00d4b4] text-sm uppercase tracking-wide">AI Guy Way</p>
-          </div>
-          <ul class="space-y-3">
-            {newWay.map(item => (
-              <li class="flex items-start gap-2 text-xs text-gray-200 leading-snug">
-                <span class="text-[#00d4b4] shrink-0 mt-0.5">✓</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+    <!-- VS badge — own column on desktop, divider on mobile -->
+    <div class="flex items-center justify-center my-2 lg:my-0">
+      <span class="font-['FuturaPTCond'] font-bold text-[#FF2C57] leading-none" style="font-size: clamp(2.5rem, 4vw, 4rem);">VS</span>
     </div>
 
-    <div class="mt-8 text-center">
-      <a href="#pricing" class="btn-primary w-full block text-lg py-4">
-        I WANT THE SMARTER WAY →
-      </a>
-      <p class="text-gray-500 text-xs mt-3">Join [X]+ brands & marketers already using AI content</p>
+    <!-- NEW WAY card -->
+    <div class="newway-card rounded-2xl p-6 lg:p-10 mt-2 lg:mt-0">
+      <ul class="space-y-5 lg:space-y-7">
+        {newWay.map(item => (
+          <li class="flex items-center gap-4">
+            <span class="shrink-0">
+              <svg width="28" height="28" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="9" stroke="#22c55e" stroke-width="1.5"/>
+                <path d="M6 10.5L8.5 13L14 7.5" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="font-['FuturaPTCond'] text-white text-base lg:text-xl leading-snug tracking-wide">{item}</span>
+          </li>
+        ))}
+      </ul>
     </div>
+
+    </div><!-- end grid -->
+
   </div>
 </section>
+
+<style>
+  .oldway-card {
+    background: linear-gradient(160deg, #3a0a10 0%, #2a0609 60%, #1a0406 100%);
+    border: 1.5px solid rgba(255, 44, 87, 0.55);
+    box-shadow: 0 0 30px rgba(255, 44, 87, 0.15), inset 0 0 40px rgba(180, 0, 30, 0.12);
+    animation: pulse-red 3s ease-in-out infinite;
+  }
+
+  .newway-card {
+    background: linear-gradient(160deg, #0a3a16 0%, #072a10 60%, #041a09 100%);
+    border: 1.5px solid rgba(34, 197, 94, 0.55);
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.15), inset 0 0 40px rgba(0, 140, 50, 0.12);
+    animation: pulse-green 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-red {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(255, 44, 87, 0.1), inset 0 0 30px rgba(180, 0, 30, 0.08);
+      border-color: rgba(255, 44, 87, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 45px rgba(255, 44, 87, 0.45), inset 0 0 50px rgba(200, 0, 40, 0.2);
+      border-color: rgba(255, 44, 87, 0.85);
+    }
+  }
+
+  @keyframes pulse-green {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(34, 197, 94, 0.1), inset 0 0 30px rgba(0, 140, 50, 0.08);
+      border-color: rgba(34, 197, 94, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 45px rgba(34, 197, 94, 0.45), inset 0 0 50px rgba(0, 160, 60, 0.2);
+      border-color: rgba(34, 197, 94, 0.85);
+    }
+  }
+</style>

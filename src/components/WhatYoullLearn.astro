@@ -1,0 +1,289 @@
+---
+import data from '../content/modules.json';
+import videos from '../content/videos.json';
+const { modules } = data;
+---
+
+<section class="wyl-section pt-14 pb-24">
+
+  <!-- Glow line at top of section -->
+  <div class="wyl-glow-wrap" aria-hidden="true">
+    <img src="/glow-line.png" class="wyl-glow-img" alt="" />
+  </div>
+
+  <div class="max-w-lg lg:max-w-6xl mx-auto px-4 lg:px-8">
+
+    <!-- Header -->
+    <div class="text-center mb-10">
+      <div class="wyl-tag">COURSE CURRICULUM</div>
+      <h2 class="font-['FuturaPTCond'] font-bold uppercase text-white leading-tight mt-4"
+          style="font-size: clamp(2.4rem, 6vw, 4.5rem);">
+        WHAT YOU'LL LEARN
+      </h2>
+      <p class="text-gray-400 text-sm lg:text-base mt-3">
+        One mentorship. Five game-changing skills. For brands, freelancers &amp; individual creators.
+      </p>
+    </div>
+
+    <!-- Two-column: Accordion (left) + Video (right) -->
+    <div class="lg:grid lg:grid-cols-2 lg:gap-10 lg:items-start">
+
+      <!-- LEFT: Module accordion -->
+      <div class="space-y-2 mb-8 lg:mb-0">
+        {modules.map((mod, idx) => (
+          <details class="wyl-module" open={idx === 0}>
+            <summary class="wyl-summary list-none">
+              <div class="flex items-center gap-3 flex-1 min-w-0">
+                <div class="wyl-icon" style={`background:${mod.color}18; border:1px solid ${mod.color}35;`}>
+                  {mod.icon}
+                </div>
+                <div class="min-w-0">
+                  <span class="block text-[10px] font-bold uppercase tracking-widest" style={`color:${mod.color}`}>{mod.num}</span>
+                  <span class="font-['FuturaPTCond'] font-bold text-white text-base uppercase leading-tight">{mod.title}</span>
+                </div>
+              </div>
+              <svg class="wyl-chevron w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </summary>
+
+            <!-- Expanded lesson list -->
+            <div class="wyl-lessons">
+              {mod.lessons.map((lesson, li) => (
+                <div class="wyl-lesson">
+                  <span class="wyl-lesson-num">{li + 1}</span>
+                  <span class="wyl-lesson-title">{lesson}</span>
+                </div>
+              ))}
+            </div>
+          </details>
+        ))}
+      </div>
+
+      <!-- RIGHT: Video + description -->
+      <div>
+        <!-- Video player -->
+        <div class="wyl-video-wrap rounded-2xl overflow-hidden mb-5" style="aspect-ratio:16/9;">
+          {videos.intro_video ? (
+            <iframe
+              src={videos.intro_video}
+              class="w-full h-full"
+              frameborder="0"
+              allow="autoplay; fullscreen"
+              allowfullscreen
+            />
+          ) : (
+            <div class="w-full h-full wyl-video-placeholder flex items-center justify-center">
+              <button class="wyl-play-btn">
+                <svg fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8 text-white ml-1">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </button>
+            </div>
+          )}
+        </div>
+
+        <!-- Description -->
+        <p class="text-gray-400 text-sm lg:text-base leading-relaxed mb-6">
+          Take your first step toward $1,000/month online income with TikTok. Inside this program, you'll learn how to set up your account, create simple AI-powered videos, avoid common mistakes, and unlock the TikTok Creator Rewards Program — even in Pakistan. No ads, no clients, no stress — just a clear path to real earnings.
+        </p>
+
+        <!-- CTA -->
+        <a href="#pricing" class="wyl-cta-btn block w-full text-center font-['FuturaPTCond'] font-bold uppercase text-xl lg:text-2xl py-5">
+          YES! I WANT TO EARN $1,000
+        </a>
+
+        <!-- Social proof -->
+        <div class="flex items-center justify-center gap-3 mt-4">
+          <div class="flex -space-x-2">
+            <div class="w-9 h-9 rounded-full border-2 border-[#FF2C57] bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-sm">😊</div>
+            <div class="w-9 h-9 rounded-full border-2 border-[#FF2C57] bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center text-sm">😊</div>
+            <div class="w-9 h-9 rounded-full border-2 border-[#FF2C57] bg-gradient-to-br from-green-400 to-teal-500 flex items-center justify-center text-sm">😊</div>
+            <div class="w-9 h-9 rounded-full border-2 border-[#FF2C57] bg-[#FF2C57] flex items-center justify-center text-[10px] font-bold text-white">2k+</div>
+          </div>
+          <div class="text-left">
+            <div class="text-[#f59e0b] text-base">★★★★★</div>
+            <p class="text-gray-400 text-xs">Join 2000+ business owners</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Glow line at bottom of section -->
+  <div class="wyl-glow-wrap wyl-glow-wrap--bottom" aria-hidden="true">
+    <img src="/glow-line.png" class="wyl-glow-img wyl-glow-img--bottom" alt="" />
+  </div>
+
+</section>
+
+<style>
+  .wyl-section {
+    background: #0a0a0a;
+    position: relative;
+  }
+
+  /* Glow line */
+  .wyl-glow-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .wyl-glow-img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 700px;
+    max-width: none;
+    mix-blend-mode: screen;
+    opacity: 0.95;
+    animation: glow-sweep 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow-sweep {
+    0%   { left: -300px; }
+    100% { left: calc(100% - 400px); }
+  }
+
+  /* Bottom glow line */
+  .wyl-glow-wrap--bottom {
+    top: auto;
+    bottom: -50px;
+  }
+  .wyl-glow-img--bottom {
+    animation: glow-sweep-bottom 4s ease-in-out infinite alternate;
+  }
+  @keyframes glow-sweep-bottom {
+    0%   { left: calc(100% - 400px); }
+    100% { left: -300px; }
+  }
+
+  /* Tag */
+  .wyl-tag {
+    display: inline-block;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    border-radius: 9999px;
+    padding: 5px 20px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* Module accordion */
+  .wyl-module {
+    background: #111;
+    border: 1px solid #1e1e1e;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .wyl-module[open] {
+    border-color: #2a2a2a;
+  }
+
+  .wyl-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .wyl-summary::-webkit-details-marker { display: none; }
+
+  /* Rotate chevron when open */
+  details[open] .wyl-chevron {
+    transform: rotate(90deg);
+  }
+  .wyl-chevron {
+    transition: transform 0.25s;
+  }
+
+  .wyl-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  /* Lesson list */
+  .wyl-lessons {
+    border-top: 1px solid #1e1e1e;
+    padding: 4px 0;
+  }
+  .wyl-lesson {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 16px;
+    border-bottom: 1px solid #181818;
+  }
+  .wyl-lesson:last-child { border-bottom: none; }
+
+  .wyl-lesson-num {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #1e1e1e;
+    color: #888;
+    font-size: 0.7rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .wyl-lesson-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    color: #ccc;
+    flex: 1;
+  }
+
+  /* Video */
+  .wyl-video-wrap {
+    border: 1.5px solid #2a2a2a;
+    box-shadow: 0 0 30px rgba(255,44,87,0.1);
+  }
+  .wyl-video-placeholder {
+    background: linear-gradient(135deg, #1a0a10, #0d0608);
+  }
+  .wyl-play-btn {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #FF2C57;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(255,44,87,0.6);
+    cursor: pointer;
+    border: none;
+  }
+
+  /* CTA */
+  .wyl-cta-btn {
+    background: linear-gradient(135deg, #FF2C57, #ff4d6d);
+    border-radius: 14px;
+    color: white;
+    box-shadow: 0 0 30px rgba(255,44,87,0.4);
+    transition: box-shadow 0.2s;
+    display: block;
+  }
+  .wyl-cta-btn:hover {
+    box-shadow: 0 0 50px rgba(255,44,87,0.65);
+  }
+</style>

@@ -1,0 +1,107 @@
+---
+---
+
+<section class="mbg-section">
+  <div class="mbg-card">
+
+    <!-- Inner group — centered, keeps content close together -->
+    <div class="flex flex-col md:flex-row items-center gap-10 md:gap-14 w-full" style="max-width:860px;">
+
+      <!-- LEFT: Text -->
+      <div class="flex-1">
+        <h2 class="mbg-headline">
+          STILL CONFUSED?<br/>
+          MONEY-BACK GUARANTEE<br/>
+          100% RISK-FREE
+        </h2>
+        <p class="mbg-body">
+          We believe in our program, and we want you to feel confident too. That's why we offer a 48-hours money-back guarantee! There's no risk for you. So why wait? Click below to get started now!
+        </p>
+      </div>
+
+      <!-- RIGHT: Badge + CTA -->
+      <div class="flex flex-col items-center gap-5 shrink-0">
+        <img src="/mbg-badge.png" alt="48-Hour Money-Back Guarantee" class="mbg-badge-img" />
+        <a href="#pricing" class="mbg-cta">
+          <span class="mbg-cta-main">🔒 GET ACCESS RIGHT NOW</span>
+          <span class="mbg-cta-sub">Click to Start</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .mbg-section {
+    background: #0a0a0a;
+    padding: 48px 32px;
+  }
+
+  .mbg-card {
+    background: #FF2C57;
+    border-radius: 20px;
+    padding: 52px 48px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mbg-headline {
+    font-family: 'FuturaPTCond', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.2rem, 3.6vw, 3.4rem);
+    color: #ffffff;
+    text-transform: uppercase;
+    line-height: 1.08;
+    margin-bottom: 18px;
+  }
+
+  .mbg-body {
+    font-family: 'FuturaPTCond', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    color: rgba(255,255,255,0.95);
+    line-height: 1.55;
+  }
+
+  .mbg-badge-img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 20px rgba(0,0,0,0.35));
+  }
+
+  .mbg-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #000000;
+    border-radius: 10px;
+    padding: 16px 32px;
+    text-decoration: none;
+    min-width: 260px;
+    text-align: center;
+    transition: opacity 0.2s;
+  }
+  .mbg-cta:hover { opacity: 0.85; }
+
+  .mbg-cta-main {
+    font-family: 'FuturaPTCond', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+  }
+
+  .mbg-cta-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.6);
+    margin-top: 4px;
+  }
+</style>

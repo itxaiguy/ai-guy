@@ -3,7 +3,7 @@ import data from '../content/bonuses.json';
 const { bonuses, core_value, bonus_value, total_value, your_price } = data;
 ---
 <section class="py-14 bg-[#0d0d0d]">
-  <div class="max-w-lg mx-auto px-4">
+  <div class="max-w-lg lg:max-w-5xl mx-auto px-4 lg:px-8">
     <div class="text-center mb-10">
       <div class="section-tag">🎁 Exclusive Bonuses</div>
       <h2 class="font-['Oswald'] text-3xl font-bold uppercase text-white mt-2">
@@ -14,7 +14,7 @@ const { bonuses, core_value, bonus_value, total_value, your_price } = data;
       <p class="text-gray-400 text-sm mt-3">These aren't filler bonuses. Each one is a standalone workshop that adds serious value.</p>
     </div>
 
-    <div class="space-y-5">
+    <div class="space-y-5 lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0">
       {bonuses.map(b => (
         <div class="rounded-2xl border overflow-hidden" style={`border-color: ${b.color}30; background: #0d0d0d;`}>
           <div class="px-5 pt-5 pb-4 border-b" style={`border-color: ${b.color}20;`}>

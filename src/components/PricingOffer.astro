@@ -1,0 +1,229 @@
+---
+---
+
+<section id="pricing" class="pof-section py-16 px-4">
+
+  <!-- Animated glow layers -->
+  <div class="pof-glow pof-glow--left" aria-hidden="true"></div>
+  <div class="pof-glow pof-glow--right" aria-hidden="true"></div>
+
+  <div class="max-w-lg lg:max-w-5xl mx-auto text-center relative z-10">
+    <div class="pof-card">
+
+    <!-- Strikethrough original price -->
+    <p class="pof-original">NORMALLY PRICE 35,000 PKR</p>
+
+    <!-- Main price -->
+    <h2 class="pof-price">NOW JUST 6,499 PKR</h2>
+
+    <!-- Limited time pill -->
+    <div class="pof-pill-wrap">
+      <span class="pof-pill">FOR LIMITED TIME ONLY</span>
+    </div>
+
+    <!-- Discount line -->
+    <p class="pof-discount">
+      GET <span style="color:#FF2C57;">81% OFF</span> TODAY
+    </p>
+
+    <!-- Sub note -->
+    <p class="pof-note">(Offer Valid for a Short Time Only)</p>
+
+    <!-- CTA Button -->
+    <div class="pof-btn-wrap">
+      <a href="/checkout" class="pof-btn">YES! I WANT TO EARN $1,000</a>
+    </div>
+
+    <!-- Social proof -->
+    <div class="flex items-center justify-center gap-3 mt-5">
+      <div class="flex -space-x-2">
+        <div class="w-9 h-9 rounded-full border-2 border-[#FF2C57] bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-sm">😊</div>
+        <div class="w-9 h-9 rounded-full border-2 border-[#FF2C57] bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center text-sm">😊</div>
+        <div class="w-9 h-9 rounded-full border-2 border-[#FF2C57] bg-gradient-to-br from-green-400 to-teal-500 flex items-center justify-center text-sm">😊</div>
+        <div class="w-9 h-9 rounded-full border-2 border-[#FF2C57] bg-[#FF2C57] flex items-center justify-center text-[10px] font-bold text-white">2k+</div>
+      </div>
+      <div class="text-left">
+        <div style="color:#f59e0b; font-size:1rem;">★★★★★</div>
+        <p style="color:#aaa; font-size:0.75rem;">Join 2000+ business owners</p>
+      </div>
+    </div>
+
+    </div><!-- /pof-card -->
+  </div>
+</section>
+
+<style>
+  .pof-section {
+    background: #0a0a0a;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Soft circular glow — fades in all directions, no sharp edges */
+  .pof-glow {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    /* soft multi-stop radial — fades completely to transparent before hitting section edge */
+    background: radial-gradient(
+      circle at center,
+      rgba(180, 20, 50, 0.55) 0%,
+      rgba(180, 20, 50, 0.3)  25%,
+      rgba(180, 20, 50, 0.1)  55%,
+      rgba(180, 20, 50, 0.02) 75%,
+      transparent 100%
+    );
+    filter: blur(40px);
+  }
+  .pof-glow--left {
+    top: 50%;
+    left: -260px;
+    transform: translateY(-50%);
+    animation: glow-pulse 4s ease-in-out infinite;
+  }
+  .pof-glow--right {
+    top: 50%;
+    right: -260px;
+    transform: translateY(-50%);
+    animation: glow-pulse 4s ease-in-out infinite 2s;
+  }
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.55; }
+    50%       { opacity: 1; }
+  }
+
+  /* Glowing bordered card */
+  .pof-card {
+    background: linear-gradient(160deg, #1a0010 0%, #0f0007 60%, #160008 100%);
+    border: 1.5px solid rgba(255, 44, 87, 0.45);
+    border-radius: 28px;
+    padding: 56px 48px;
+    position: relative;
+    box-shadow:
+      0 0 40px rgba(255, 44, 87, 0.18),
+      0 0 80px rgba(255, 44, 87, 0.08),
+      inset 0 0 60px rgba(255, 44, 87, 0.04);
+    animation: card-glow-pulse 3.5s ease-in-out infinite;
+  }
+
+  @keyframes card-glow-pulse {
+    0%, 100% {
+      box-shadow:
+        0 0 40px rgba(255, 44, 87, 0.18),
+        0 0 80px rgba(255, 44, 87, 0.08),
+        inset 0 0 60px rgba(255, 44, 87, 0.04);
+      border-color: rgba(255, 44, 87, 0.45);
+    }
+    50% {
+      box-shadow:
+        0 0 60px rgba(255, 44, 87, 0.35),
+        0 0 120px rgba(255, 44, 87, 0.15),
+        inset 0 0 80px rgba(255, 44, 87, 0.07);
+      border-color: rgba(255, 44, 87, 0.75);
+    }
+  }
+
+  /* Strikethrough price */
+  .pof-original {
+    font-family: 'FuturaPTCond', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    color: #FF2C57;
+    text-decoration: line-through;
+    text-decoration-color: #FF2C57;
+    text-decoration-thickness: 2.5px;
+    letter-spacing: 0.03em;
+    margin-bottom: 8px;
+  }
+
+  /* Main price */
+  .pof-price {
+    font-family: 'FuturaPTCond', sans-serif;
+    font-weight: 700;
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  /* Pill badge */
+  .pof-pill-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+  .pof-pill {
+    font-family: 'FuturaPTCond', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #ffffff;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    border-radius: 9999px;
+    padding: 9px 32px;
+  }
+
+  /* Discount line */
+  .pof-discount {
+    font-family: 'FuturaPTCond', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+    color: #ffffff;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+
+  /* Sub note */
+  .pof-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #25F4EE;
+    margin-bottom: 32px;
+  }
+
+  /* CTA button */
+  .pof-btn-wrap {
+    display: flex;
+    justify-content: center;
+  }
+  .pof-btn {
+    display: inline-block;
+    font-family: 'FuturaPTCond', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    text-transform: uppercase;
+    color: #ffffff;
+    background: linear-gradient(135deg, #FF2C57, #ff4d6d);
+    border-radius: 16px;
+    padding: 22px 64px;
+    box-shadow: 0 0 60px rgba(255,44,87,0.7), 0 4px 30px rgba(255,44,87,0.45);
+    transition: box-shadow 0.2s, transform 0.15s;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.02em;
+  }
+  .pof-btn:hover {
+    box-shadow: 0 0 70px rgba(255,44,87,0.85), 0 4px 32px rgba(255,44,87,0.6);
+    transform: translateY(-1px);
+  }
+  /* shimmer sweep */
+  .pof-btn::after {
+    content: '';
+    position: absolute;
+    top: 0; right: -80%;
+    width: 60%; height: 100%;
+    background: linear-gradient(105deg, transparent 20%, rgba(255,255,255,0.18) 40%, rgba(255,255,255,0.38) 50%, rgba(255,255,255,0.18) 60%, transparent 80%);
+    transform: skewX(-15deg);
+    animation: btn-shimmer 2.4s ease-in-out infinite;
+  }
+  @keyframes btn-shimmer {
+    0%   { right: -80%; }
+    100% { right: 120%; }
+  }
+</style>
