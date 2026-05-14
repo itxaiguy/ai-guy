@@ -1,5 +1,6 @@
 ---
-import data from '../content/hero.json';
+import data from '../content/easierway.json';
+const { heading, heading_accent, body_p1, body_p2, body_p3, cta_text, social_proof_count, social_proof_label, carousel_cards } = data;
 ---
 
 <section class="easier-way-section py-14 px-4">
@@ -13,54 +14,22 @@ import data from '../content/hero.json';
         <!-- Heading -->
         <h2 class="font-['FuturaPTCond'] font-bold uppercase text-center lg:text-left leading-tight mb-8"
             style="font-size: clamp(3rem, 7vw, 5.5rem);">
-          <span class="text-white">BUT WHAT IF<br/>THERE WAS AN<br/></span>
-          <span class="text-[#FF2C57]">EASIER WAY?</span>
+          <span class="text-white">{heading}<br/></span>
+          <span class="text-[#FF2C57]">{heading_accent}</span>
         </h2>
 
         <!-- 3D Coverflow Carousel -->
         <div class="coverflow-wrap mb-8">
           <div class="coverflow" id="coverflow">
-
-            <div class="cf-card" data-index="0">
-              <div class="cf-inner" style="background: linear-gradient(135deg,#2a0810,#1a0408);">
-                <div class="cf-label" style="color:#FF2C57">TikTok CRP</div>
-                <div class="cf-title">Earn With AI</div>
-                <div class="cf-play"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+            {carousel_cards.map((card, i) => (
+              <div class="cf-card" data-index={i}>
+                <div class="cf-inner" style={`background: ${card.bg};`}>
+                  <div class="cf-label" style={`color:${card.labelColor};`}>{card.label}</div>
+                  <div class="cf-title">{card.title}</div>
+                  <div class="cf-play"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                </div>
               </div>
-            </div>
-
-            <div class="cf-card" data-index="1">
-              <div class="cf-inner" style="background: linear-gradient(135deg,#1a1a2a,#0d0d1a);">
-                <div class="cf-label" style="color:#a78bfa">Masterclass</div>
-                <div class="cf-title">Training</div>
-                <div class="cf-play"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-              </div>
-            </div>
-
-            <div class="cf-card" data-index="2">
-              <div class="cf-inner" style="background: linear-gradient(135deg,#0a2a14,#051a0c);">
-                <div class="cf-label" style="color:#00d4b4">Beginner</div>
-                <div class="cf-title">Zero Investment Method</div>
-                <div class="cf-play"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-              </div>
-            </div>
-
-            <div class="cf-card" data-index="3">
-              <div class="cf-inner" style="background: linear-gradient(135deg,#1a1a0a,#0d0d05);">
-                <div class="cf-label" style="color:#f59e0b">AI Content</div>
-                <div class="cf-title">Creation Guide</div>
-                <div class="cf-play"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-              </div>
-            </div>
-
-            <div class="cf-card" data-index="4">
-              <div class="cf-inner" style="background: linear-gradient(135deg,#2a1a0a,#1a0d05);">
-                <div class="cf-label" style="color:#fb923c">Faceless</div>
-                <div class="cf-title">Earn Without Showing Face</div>
-                <div class="cf-play"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-              </div>
-            </div>
-
+            ))}
           </div>
 
           <!-- Dots -->
@@ -72,21 +41,15 @@ import data from '../content/hero.json';
       <div>
         <!-- Body text -->
         <div class="space-y-5 mb-10 text-center lg:text-left">
-          <p class="font-['Gilmer'] text-gray-300 text-base lg:text-xl leading-relaxed">
-            What if you could earn $1,000 or more each month just by posting simple TikTok videos without showing your face, selling products, or working long hours for clients?
-          </p>
-          <p class="font-['Gilmer'] text-gray-300 text-base lg:text-xl leading-relaxed">
-            The good news is: It's possible, and people are already doing it. TikTok has launched a powerful new program that rewards creators for posting content and now, anyone can join in and start earning, even if they've never created a single video before.
-          </p>
-          <p class="font-['Gilmer'] text-gray-300 text-base lg:text-xl leading-relaxed">
-            After spending an entire year earning from TikTok and mastering the ins and outs of this system, I've created a complete training program based on my real experience. This isn't theory — it's a proven roadmap that can change your life and help you start earning.
-          </p>
+          <p class="font-['Gilmer'] text-gray-300 text-base lg:text-xl leading-relaxed">{body_p1}</p>
+          <p class="font-['Gilmer'] text-gray-300 text-base lg:text-xl leading-relaxed">{body_p2}</p>
+          <p class="font-['Gilmer'] text-gray-300 text-base lg:text-xl leading-relaxed">{body_p3}</p>
         </div>
 
         <!-- CTA Button -->
         <div class="mb-6">
           <a href="#pricing" class="easier-cta-btn block w-full font-['FuturaPTCond'] font-bold uppercase tracking-wide text-white text-2xl lg:text-3xl py-5 px-8 text-center">
-            YES! I WANT TO EARN $1,000
+            {cta_text}
           </a>
         </div>
 
@@ -96,11 +59,11 @@ import data from '../content/hero.json';
             <div class="w-11 h-11 rounded-full border-2 border-[#FF2C57] bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-sm">😊</div>
             <div class="w-11 h-11 rounded-full border-2 border-[#FF2C57] bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center text-sm">😊</div>
             <div class="w-11 h-11 rounded-full border-2 border-[#FF2C57] bg-gradient-to-br from-green-400 to-teal-500 flex items-center justify-center text-sm">😊</div>
-            <div class="w-11 h-11 rounded-full border-2 border-[#FF2C57] bg-[#FF2C57] flex items-center justify-center text-xs font-bold text-white">2k+</div>
+            <div class="w-11 h-11 rounded-full border-2 border-[#FF2C57] bg-[#FF2C57] flex items-center justify-center text-xs font-bold text-white">{social_proof_count}</div>
           </div>
           <div class="text-left">
             <div class="text-[#f59e0b] text-lg">★★★★★</div>
-            <p class="text-gray-400 text-sm">Join 2,000+ business owners</p>
+            <p class="text-gray-400 text-sm">{social_proof_label}</p>
           </div>
         </div>
       </div>

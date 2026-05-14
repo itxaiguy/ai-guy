@@ -1,19 +1,6 @@
 ---
-const oldWay = [
-  "YouTube: Slow Growth",
-  "Shopify: Ads & Products",
-  "Copywriting: Heavy Competition",
-  "Freelancing: Client Stress",
-  "Amazon FBA: High risk, high investment",
-];
-
-const newWay = [
-  "Post simple TikTok videos and earn fast",
-  "No Ads, No Products",
-  "Easy AI Content",
-  "Freelancing: Client stress and delays",
-  "Zero Investment",
-];
+import data from '../content/oldvsnew.json';
+const { heading, heading_accent, old_way, new_way } = data;
 ---
 
 <section class="bg-[#0a0a0a] py-14">
@@ -22,7 +9,7 @@ const newWay = [
     <!-- Heading: FuturaPTCond -->
     <h2 class="font-['FuturaPTCond'] font-bold uppercase text-center text-white leading-tight mb-8"
         style="font-size: clamp(2rem, 6vw, 4rem);">
-      OLD WAY VS <span class="text-[#FF2C57]">NEW WAY</span>
+      {heading} <span class="text-[#FF2C57]">{heading_accent}</span>
     </h2>
 
     <!-- Cards: stacked on mobile, 3-col on desktop (card | VS | card) -->
@@ -31,7 +18,7 @@ const newWay = [
     <!-- OLD WAY card -->
     <div class="oldway-card rounded-2xl p-6 lg:p-10 mb-4 lg:mb-0">
       <ul class="space-y-5 lg:space-y-7">
-        {oldWay.map(item => (
+        {old_way.map(item => (
           <li class="flex items-center gap-4">
             <span class="shrink-0">
               <svg width="28" height="28" viewBox="0 0 20 20" fill="none">
@@ -53,7 +40,7 @@ const newWay = [
     <!-- NEW WAY card -->
     <div class="newway-card rounded-2xl p-6 lg:p-10 mt-2 lg:mt-0">
       <ul class="space-y-5 lg:space-y-7">
-        {newWay.map(item => (
+        {new_way.map(item => (
           <li class="flex items-center gap-4">
             <span class="shrink-0">
               <svg width="28" height="28" viewBox="0 0 20 20" fill="none">

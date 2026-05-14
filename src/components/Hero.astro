@@ -61,9 +61,15 @@ import videos from '../content/videos.json';
         <div class="shiny-pill-rotator"></div>
         <div class="shiny-pill-inner flex items-center gap-2.5 px-4 py-2">
           <div class="flex -space-x-2 shrink-0">
-            <div class="w-7 h-7 rounded-full border border-[#FF2C57] bg-gradient-to-br from-orange-400 to-red-600 flex items-center justify-center text-[11px]">😊</div>
-            <div class="w-7 h-7 rounded-full border border-[#FF2C57] bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center text-[11px]">😊</div>
-            <div class="w-7 h-7 rounded-full border border-[#FF2C57] bg-gradient-to-br from-green-400 to-teal-600 flex items-center justify-center text-[11px]">😊</div>
+            {data.avatar1
+              ? <img src={data.avatar1} alt="Student" class="w-7 h-7 rounded-full border border-[#FF2C57] object-cover" />
+              : <div class="w-7 h-7 rounded-full border border-[#FF2C57] bg-gradient-to-br from-orange-400 to-red-600"></div>}
+            {data.avatar2
+              ? <img src={data.avatar2} alt="Student" class="w-7 h-7 rounded-full border border-[#FF2C57] object-cover" />
+              : <div class="w-7 h-7 rounded-full border border-[#FF2C57] bg-gradient-to-br from-blue-400 to-purple-600"></div>}
+            {data.avatar3
+              ? <img src={data.avatar3} alt="Student" class="w-7 h-7 rounded-full border border-[#FF2C57] object-cover" />
+              : <div class="w-7 h-7 rounded-full border border-[#FF2C57] bg-gradient-to-br from-green-400 to-teal-600"></div>}
           </div>
           <span class="text-white text-[13px] font-medium whitespace-nowrap">{data.tag}</span>
           <span class="text-[#FF2C57] font-bold text-[11px] leading-none shrink-0">→</span>
@@ -74,8 +80,7 @@ import videos from '../content/videos.json';
     <!-- Hero Headline -->
     <h1 class="font-['FuturaPTCond'] font-bold uppercase text-white mb-6 leading-[1.05] px-2" style="font-size: clamp(2.4rem, 7vw, 5rem);">
       {data.headline1}<br/>
-      <span class="text-[#FF2C57]">{data.headline_accent}</span> {data.headline2}<br/>
-      {data.headline3}
+      <span class="text-[#FF2C57]">{data.headline_accent}</span> {data.headline2}
     </h1>
 
     <!-- Video Card — full width on desktop -->
@@ -115,14 +120,6 @@ import videos from '../content/videos.json';
           </div>
         )}
 
-        <!-- Scattered student avatar circles (decorative) -->
-        <div class="absolute top-3 left-4 w-11 h-11 lg:w-16 lg:h-16 rounded-full border-2 border-white/60 bg-gradient-to-br from-orange-400 to-red-500 overflow-hidden flex items-center justify-center text-sm shadow-lg">😊</div>
-        <div class="absolute top-6 right-5 w-12 h-12 lg:w-16 lg:h-16 rounded-full border-2 border-white/60 bg-gradient-to-br from-blue-400 to-indigo-600 overflow-hidden flex items-center justify-center text-sm shadow-lg">😊</div>
-        <div class="absolute top-1/3 left-2 w-10 h-10 lg:w-14 lg:h-14 rounded-full border-2 border-white/60 bg-gradient-to-br from-purple-400 to-pink-600 overflow-hidden flex items-center justify-center text-xs shadow-lg">😊</div>
-        <div class="absolute top-1/3 right-2 w-11 h-11 lg:w-14 lg:h-14 rounded-full border-2 border-white/60 bg-gradient-to-br from-green-400 to-teal-500 overflow-hidden flex items-center justify-center text-sm shadow-lg">😊</div>
-        <div class="absolute bottom-8 left-3 w-12 h-12 lg:w-16 lg:h-16 rounded-full border-2 border-white/60 bg-gradient-to-br from-yellow-400 to-orange-500 overflow-hidden flex items-center justify-center text-sm shadow-lg">😊</div>
-        <div class="absolute bottom-6 right-4 w-10 h-10 lg:w-14 lg:h-14 rounded-full border-2 border-white/60 bg-gradient-to-br from-red-400 to-rose-600 overflow-hidden flex items-center justify-center text-xs shadow-lg">😊</div>
-        <div class="absolute bottom-16 left-1/2 -translate-x-1/2 translate-x-16 w-9 h-9 lg:w-12 lg:h-12 rounded-full border-2 border-white/60 bg-gradient-to-br from-cyan-400 to-blue-500 overflow-hidden flex items-center justify-center text-xs shadow-lg">😊</div>
       </div>
     </div>
 
@@ -136,10 +133,15 @@ import videos from '../content/videos.json';
     <!-- Social proof row -->
     <div class="flex items-center justify-center gap-3 mb-8">
       <div class="flex -space-x-2 shrink-0">
-        <div class="w-8 h-8 rounded-full border-2 border-[#FF2C57] bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-xs">😊</div>
-        <div class="w-8 h-8 rounded-full border-2 border-[#FF2C57] bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center text-xs">😊</div>
-        <div class="w-8 h-8 rounded-full border-2 border-[#FF2C57] bg-gradient-to-br from-green-400 to-teal-500 flex items-center justify-center text-xs">😊</div>
-        <div class="w-8 h-8 rounded-full border-2 border-[#FF2C57] bg-[#FF2C57] flex items-center justify-center text-[10px] font-bold text-white">2k+</div>
+        {data.avatar1
+          ? <img src={data.avatar1} alt="Student" class="w-8 h-8 rounded-full border-2 border-[#FF2C57] object-cover" />
+          : <div class="w-8 h-8 rounded-full border-2 border-[#FF2C57] bg-gradient-to-br from-orange-400 to-red-500"></div>}
+        {data.avatar2
+          ? <img src={data.avatar2} alt="Student" class="w-8 h-8 rounded-full border-2 border-[#FF2C57] object-cover" />
+          : <div class="w-8 h-8 rounded-full border-2 border-[#FF2C57] bg-gradient-to-br from-blue-400 to-purple-600"></div>}
+        {data.avatar3
+          ? <img src={data.avatar3} alt="Student" class="w-8 h-8 rounded-full border-2 border-[#FF2C57] object-cover" />
+          : <div class="w-8 h-8 rounded-full border-2 border-[#FF2C57] bg-gradient-to-br from-green-400 to-teal-500"></div>}
       </div>
       <div class="text-left">
         <div class="text-[#f59e0b] text-sm tracking-tight">★★★★★</div>

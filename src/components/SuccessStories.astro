@@ -1,31 +1,6 @@
 ---
-const col1 = [
-  { name: "John Anderson", avatar: "👨", avatarBg: "linear-gradient(135deg,#f97316,#ef4444)", quote: "Within my first month, I earned $300 just by posting AI-generated videos. This program changed my college life." },
-  { name: "Emily Siemens", avatar: "👩‍🦰", avatarBg: "linear-gradient(135deg,#f59e0b,#f97316)", quote: "Instead of wasting time scrolling TikTok, I now post videos that pay me. Already covered my monthly rent." },
-  { name: "Michael Leely", avatar: "👨‍🦲", avatarBg: "linear-gradient(135deg,#0ea5e9,#2563eb)", quote: "I never thought I could make money online. In 25 days, I made my first $500 with only my phone. I never thought I could make money online." },
-  { name: "Omar Sheikh", avatar: "🧑‍💼", avatarBg: "linear-gradient(135deg,#a855f7,#7c3aed)", quote: "The coaching calls alone are worth it. My mentor helped me fix my account in one session and I started getting views the next day." },
-];
-
-const col2 = [
-  { name: "Alex Noon", avatar: "👨‍💼", avatarBg: "linear-gradient(135deg,#3b82f6,#6366f1)", quote: "I was tired of chasing clients. With TikTok CRP, I now earn $1,000/month directly without deadlines." },
-  { name: "Rachel Simpson", avatar: "👩‍🦳", avatarBg: "linear-gradient(135deg,#8b5cf6,#7c3aed)", quote: "Freelancing was stressful. This course gave me a new start—earning $700/month with no stress. This course gave me a new start." },
-  { name: "Chris Howard", avatar: "👨‍💻", avatarBg: "linear-gradient(135deg,#22c55e,#16a34a)", quote: "I was tired of chasing clients. With TikTok CRP, I now earn $1,000/month directly without deadlines. Absolutely life-changing." },
-  { name: "Fatima Malik", avatar: "👩", avatarBg: "linear-gradient(135deg,#f43f5e,#be123c)", quote: "As a student in Pakistan, I never imagined earning in dollars. TikTok CRP made it real. I hit $500 in my second month." },
-];
-
-const col3 = [
-  { name: "Emma Patterson", avatar: "👩", avatarBg: "linear-gradient(135deg,#ec4899,#f43f5e)", quote: "I never thought I could make money online. In 25 days, I made my first $500 with only my phone." },
-  { name: "Alex Caron", avatar: "🧑", avatarBg: "linear-gradient(135deg,#06b6d4,#0891b2)", quote: "The community support kept me motivated. I hit my first $1,000 milestone in just 40 days. The community support kept me going." },
-  { name: "Nick Robinson", avatar: "🧑‍🦱", avatarBg: "linear-gradient(135deg,#f97316,#dc2626)", quote: "Within my first month, I earned $300 just by posting AI-generated videos. This program changed my college life." },
-  { name: "Zara Ahmed", avatar: "👩‍🎓", avatarBg: "linear-gradient(135deg,#10b981,#0d9488)", quote: "I was skeptical at first, but the results speak for themselves. $600 in my first month while still in university." },
-];
-
-const col4 = [
-  { name: "David Lite", avatar: "👨‍🦱", avatarBg: "linear-gradient(135deg,#10b981,#059669)", quote: "I had zero online experience. The step-by-step system helped me start fast and avoid all beginner mistakes. Highly recommended." },
-  { name: "Sophie Kyle", avatar: "👩‍🦱", avatarBg: "linear-gradient(135deg,#f43f5e,#e11d48)", quote: "I used TikTok strategies from this program to grow my shop's sales and earn extra income on the side." },
-  { name: "Tom Green", avatar: "👨‍🎤", avatarBg: "linear-gradient(135deg,#a855f7,#6366f1)", quote: "Instead of wasting time scrolling TikTok, I now post videos that pay me. Already covered my monthly rent." },
-  { name: "Hassan Raza", avatar: "🧑‍💻", avatarBg: "linear-gradient(135deg,#f59e0b,#d97706)", quote: "The Discord community is incredible. Real people, real results. I learned more in a week than months of YouTube tutorials." },
-];
+import data from '../content/successstories.json';
+const { heading, heading_accent, subtitle, col1, col2, col3, col4 } = data;
 ---
 
 <section class="ss-section py-16 px-4">
@@ -34,12 +9,10 @@ const col4 = [
     <!-- Headline -->
     <div class="mb-12">
       <h2 class="ss-headline">
-        SUCCESS STORIES FROM<br/>
-        <span style="color:#FF2C57;">OUR STUDENTS</span>
+        {heading}<br/>
+        <span style="color:#FF2C57;">{heading_accent}</span>
       </h2>
-      <p class="ss-sub">
-        Discover how ordinary people in Pakistan turned simple TikTok videos into real online income.
-      </p>
+      <p class="ss-sub">{subtitle}</p>
     </div>
 
     <!-- Scrolling viewport -->
@@ -58,7 +31,7 @@ const col4 = [
             {[...col1, ...col1].map(t => (
               <div class="ss-card">
                 <div class="ss-author">
-                  <div class="ss-avatar" style={`background:${t.avatarBg};`}>{t.avatar}</div>
+                  <div class="ss-avatar" style={`background:${t.avatarBg};`}>{t.name.charAt(0)}</div>
                   <span class="ss-name">{t.name}</span>
                 </div>
                 <p class="ss-quote">"{t.quote}"</p>
@@ -73,7 +46,7 @@ const col4 = [
             {[...col2, ...col2].map(t => (
               <div class="ss-card">
                 <div class="ss-author">
-                  <div class="ss-avatar" style={`background:${t.avatarBg};`}>{t.avatar}</div>
+                  <div class="ss-avatar" style={`background:${t.avatarBg};`}>{t.name.charAt(0)}</div>
                   <span class="ss-name">{t.name}</span>
                 </div>
                 <p class="ss-quote">"{t.quote}"</p>
@@ -88,7 +61,7 @@ const col4 = [
             {[...col3, ...col3].map(t => (
               <div class="ss-card">
                 <div class="ss-author">
-                  <div class="ss-avatar" style={`background:${t.avatarBg};`}>{t.avatar}</div>
+                  <div class="ss-avatar" style={`background:${t.avatarBg};`}>{t.name.charAt(0)}</div>
                   <span class="ss-name">{t.name}</span>
                 </div>
                 <p class="ss-quote">"{t.quote}"</p>
@@ -103,7 +76,7 @@ const col4 = [
             {[...col4, ...col4].map(t => (
               <div class="ss-card">
                 <div class="ss-author">
-                  <div class="ss-avatar" style={`background:${t.avatarBg};`}>{t.avatar}</div>
+                  <div class="ss-avatar" style={`background:${t.avatarBg};`}>{t.name.charAt(0)}</div>
                   <span class="ss-name">{t.name}</span>
                 </div>
                 <p class="ss-quote">"{t.quote}"</p>

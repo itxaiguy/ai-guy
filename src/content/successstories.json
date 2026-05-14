@@ -1,0 +1,93 @@
+{
+  "heading": "SUCCESS STORIES FROM",
+  "heading_accent": "OUR STUDENTS",
+  "subtitle": "See how creators and brand owners across Pakistan are using AI to transform their content game.",
+  "col1": [
+    {
+      "name": "Bilal Hussain",
+      "avatarBg": "linear-gradient(135deg,#f97316,#ef4444)",
+      "quote": "I used to spend Rs. 40,000 on product shoots. Now I create the same quality in-house with AI. The ROI is insane."
+    },
+    {
+      "name": "Sana Mirza",
+      "avatarBg": "linear-gradient(135deg,#f59e0b,#f97316)",
+      "quote": "Within a month I was creating AI product photography for local brands and charging Rs. 15,000 per project. This skill is real."
+    },
+    {
+      "name": "Usman Tariq",
+      "avatarBg": "linear-gradient(135deg,#0ea5e9,#2563eb)",
+      "quote": "I started as a complete beginner. Three months in, I run an AI content service for 6 ecom brands. Best investment I've made."
+    },
+    {
+      "name": "Nida Khan",
+      "avatarBg": "linear-gradient(135deg,#a855f7,#7c3aed)",
+      "quote": "The weekly calls alone changed how I think about content. My mentor showed me tools I didn't even know existed."
+    }
+  ],
+  "col2": [
+    {
+      "name": "Hamza Sheikh",
+      "avatarBg": "linear-gradient(135deg,#3b82f6,#6366f1)",
+      "quote": "I was freelancing under constant deadline pressure. Now I offer AI content as a premium service — no more chasing clients."
+    },
+    {
+      "name": "Aimen Fatima",
+      "avatarBg": "linear-gradient(135deg,#8b5cf6,#7c3aed)",
+      "quote": "Never had a design background. The step-by-step modules made it easy. I created my first AI photoshoot in week two."
+    },
+    {
+      "name": "Faisal Mehmood",
+      "avatarBg": "linear-gradient(135deg,#22c55e,#16a34a)",
+      "quote": "My brand used to wait 2 weeks and spend Rs. 60K for a shoot. Now I get better results with AI in a single afternoon."
+    },
+    {
+      "name": "Zainab Ali",
+      "avatarBg": "linear-gradient(135deg,#f43f5e,#be123c)",
+      "quote": "I added AI influencer creation to my services. Brands love it — they get UGC-style content without hiring real influencers."
+    }
+  ],
+  "col3": [
+    {
+      "name": "Raza Abbasi",
+      "avatarBg": "linear-gradient(135deg,#ec4899,#f43f5e)",
+      "quote": "The Discord community is where I learned the most. Everyone shares what's working and the coach responds fast."
+    },
+    {
+      "name": "Maira Iqbal",
+      "avatarBg": "linear-gradient(135deg,#06b6d4,#0891b2)",
+      "quote": "I run a small clothing brand and AI product photography changed everything. My product listings look like a Rs. 200K shoot."
+    },
+    {
+      "name": "Talha Qureshi",
+      "avatarBg": "linear-gradient(135deg,#f97316,#dc2626)",
+      "quote": "AI voice cloning alone saved me from hiring a voiceover artist for every ad. I create multilingual ads in minutes now."
+    },
+    {
+      "name": "Hira Baig",
+      "avatarBg": "linear-gradient(135deg,#10b981,#0d9488)",
+      "quote": "I was skeptical but the results convinced me. By module 3, I was already creating content I could charge for."
+    }
+  ],
+  "col4": [
+    {
+      "name": "Arslan Niazi",
+      "avatarBg": "linear-gradient(135deg,#10b981,#059669)",
+      "quote": "Zero experience. Zero studio. The program teaches you exactly what tools to use and in what order. It just works."
+    },
+    {
+      "name": "Sadia Nawaz",
+      "avatarBg": "linear-gradient(135deg,#f43f5e,#e11d48)",
+      "quote": "I used the AI influencer module to create product review content for my skincare brand. Sales increased by 40%."
+    },
+    {
+      "name": "Ahmed Rehman",
+      "avatarBg": "linear-gradient(135deg,#a855f7,#6366f1)",
+      "quote": "This mentorship is different. It's not pre-recorded and forgotten — the 1-on-1 calls make sure you actually progress."
+    },
+    {
+      "name": "Komal Shahid",
+      "avatarBg": "linear-gradient(135deg,#f59e0b,#d97706)",
+      "quote": "I combined the AI avatar and voice modules to build a full spokesperson for my brand. No models, no contracts, no fees."
+    }
+  ]
+}

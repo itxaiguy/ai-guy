@@ -1,21 +1,6 @@
 ---
-const forItems = [
-  "You want to make real money from TikTok.",
-  "You want to learn easy tricks to get more views.",
-  "You want to keep your account safe.",
-  "You want to join the TikTok CRP even if it's not in Pakistan.",
-  "You're ready to take action and join our weekly coaching calls.",
-  "You want to join a community that helps and supports you.",
-];
-
-const notForItems = [
-  "You think TikTok is just for fun and don't care about earning from it.",
-  "You're looking for shortcuts.",
-  "You don't mind losing your account.",
-  "You think it's too difficult to earn from TikTok.",
-  "You don't want to learn new things.",
-  "You prefer to work alone without any help.",
-];
+import data from '../content/isthiscoachingforyou.json';
+const { heading, heading_accent, for_items, not_for_items } = data;
 ---
 
 <section class="itcfy-section py-14 px-4">
@@ -24,8 +9,7 @@ const notForItems = [
     <!-- Headline -->
     <h2 class="font-['FuturaPTCond'] font-bold uppercase text-center leading-tight mb-10"
         style="font-size: clamp(2.4rem, 6vw, 4rem); color: #ffffff;">
-      IS THIS <span style="color:#FF2C57;">TIKTOK COACHING</span><br/>
-      FOR YOU?
+      {heading} <span style="color:#FF2C57;">{heading_accent}</span>
     </h2>
 
     <!-- Two cards -->
@@ -35,7 +19,7 @@ const notForItems = [
       <div class="itcfy-card itcfy-card--yes">
         <h3 class="itcfy-card-title">THIS COACHING IS FOR YOU</h3>
         <ul class="space-y-3">
-          {forItems.map(item => (
+          {for_items.map(item => (
             <li class="flex items-start gap-3">
               <span class="shrink-0" style="margin-top:3px;">
                 <svg viewBox="0 0 24 24" fill="none" width="22" height="22">
@@ -53,7 +37,7 @@ const notForItems = [
       <div class="itcfy-card itcfy-card--no">
         <h3 class="itcfy-card-title">THIS COACHING IS NOT FOR YOU</h3>
         <ul class="space-y-3">
-          {notForItems.map(item => (
+          {not_for_items.map(item => (
             <li class="flex items-start gap-3">
               <span class="shrink-0" style="margin-top:3px;">
                 <svg viewBox="0 0 24 24" fill="none" width="22" height="22">

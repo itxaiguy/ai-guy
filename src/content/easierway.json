@@ -1,0 +1,17 @@
+{
+  "heading": "BUT WHAT IF THERE WAS AN",
+  "heading_accent": "EASIER WAY?",
+  "body_p1": "What if you could create professional-grade product photos, brand videos, AI influencers, and ad creatives — without a studio, a crew, or an agency — all from your laptop?",
+  "body_p2": "The good news is: it's already happening. AI has flipped the content creation industry. Brand owners and freelancers who master these tools are producing results that used to require Rs. 50,000+ shoots — for almost nothing.",
+  "body_p3": "After a full year mastering AI content tools and teaching them to hundreds of students, I've built a step-by-step mentorship that takes you from zero to producing content brands actually pay for.",
+  "cta_text": "YES! I WANT TO LEARN THIS SKILL",
+  "social_proof_count": "800+",
+  "social_proof_label": "Join 800+ creators & brand owners",
+  "carousel_cards": [
+    { "label": "AI Photography", "title": "Product Shoots with AI", "labelColor": "#FF2C57", "bg": "linear-gradient(135deg,#2a0810,#1a0408)" },
+    { "label": "AI Video", "title": "Brand Videos & Ad Content", "labelColor": "#a78bfa", "bg": "linear-gradient(135deg,#1a1a2a,#0d0d1a)" },
+    { "label": "AI Influencer", "title": "UGC Without Real Models", "labelColor": "#00d4b4", "bg": "linear-gradient(135deg,#0a2a14,#051a0c)" },
+    { "label": "AI Voice", "title": "Studio Voiceovers Instantly", "labelColor": "#f59e0b", "bg": "linear-gradient(135deg,#1a1a0a,#0d0d05)" },
+    { "label": "AI Avatar", "title": "Your Brand's AI Spokesperson", "labelColor": "#fb923c", "bg": "linear-gradient(135deg,#2a1a0a,#1a0d05)" }
+  ]
+}

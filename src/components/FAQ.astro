@@ -1,15 +1,6 @@
 ---
-const faqs = [
-  { q: "Do I need experience to start?" },
-  { q: "How much can I earn from TikTok CRP?" },
-  { q: "Is this available in Pakistan?" },
-  { q: "Do I need to show my face?" },
-  { q: "What if I don't have money to invest?" },
-  { q: "How long before I see results?" },
-  { q: "What if I get stuck?" },
-  { q: "Is this a one-time payment or subscription?" },
-  { q: "When does new programs get released?" },
-];
+import data from '../content/faq.json';
+const { faqs } = data;
 ---
 
 <section id="faq" class="faq-section py-16 px-4">
@@ -37,6 +28,7 @@ const faqs = [
               <span class="faq-q">{i + 1}. {faq.q}</span>
               <span class="faq-icon">+</span>
             </summary>
+            <p class="faq-answer">{faq.a}</p>
           </details>
         ))}
       </div>
@@ -140,5 +132,14 @@ const faqs = [
 
   details[open] .faq-icon {
     transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.65;
+    padding: 0 4px 18px;
+    margin: 0;
   }
 </style>

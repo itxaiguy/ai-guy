@@ -1,0 +1,19 @@
+{
+  "tag": "IS THIS YOU?",
+  "heading": "WHO IS THIS FOR?",
+  "subtitle": "See if you can relate.",
+  "audiences": [
+    {
+      "title": "Brand Owners",
+      "desc": "You spend tens of thousands on product shoots and influencers. Learn to produce the same quality content with AI in-house, on demand, at a fraction of the cost."
+    },
+    {
+      "title": "Freelancers & Creators",
+      "desc": "Add AI content creation to your skillset and offer a service brands are actively paying for AI photography, UGC videos, and AI-generated creatives."
+    },
+    {
+      "title": "Complete Beginners",
+      "desc": "No design background, no studio, no crew needed. If you can follow a step-by-step process, you can create professional AI content and build a real skill from zero."
+    }
+  ]
+}

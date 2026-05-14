@@ -18,16 +18,34 @@ collections:
           - { label: "Scrolling Text", name: "text", widget: "string", hint: "The text that scrolls across the top bar" }
           - { label: "CTA Label", name: "cta_label", widget: "string", default: "Enroll Now — 4,999 PKR →" }
 
+      # ─── WHO IS THIS FOR ─────────────────────────────────────────────
+      - name: "isthisforyou"
+        label: "👥 Who Is This For"
+        file: "src/content/isthisforyou.json"
+        fields:
+          - { label: "Tag (pill label)", name: "tag", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - label: "Audience Cards"
+            name: "audiences"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+
       # ─── HERO ────────────────────────────────────────────────────────
       - name: "hero"
         label: "🦸 Hero Section"
         file: "src/content/hero.json"
         fields:
           - { label: "Tag (pill above headline)", name: "tag", widget: "string" }
+          - { label: "Pill Avatar 1 (left circle)", name: "avatar1", widget: "image", required: false, hint: "Small circular photo shown in the pill badge" }
+          - { label: "Pill Avatar 2 (middle circle)", name: "avatar2", widget: "image", required: false }
+          - { label: "Pill Avatar 3 (right circle)", name: "avatar3", widget: "image", required: false }
           - { label: "Headline Line 1", name: "headline1", widget: "string" }
           - { label: "Headline Accent (red)", name: "headline_accent", widget: "string" }
           - { label: "Headline Line 2", name: "headline2", widget: "string" }
-          - { label: "Headline Line 3", name: "headline3", widget: "string" }
           - { label: "Subheadline", name: "subheadline", widget: "text" }
           - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
           - { label: "Student Count Badge", name: "student_count", widget: "string" }
@@ -170,6 +188,102 @@ collections:
           - { label: "Guarantee Text", name: "guarantee_text", widget: "text" }
           - label: "What's Included (checklist)"
             name: "includes"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+
+      # ─── EASIER WAY ──────────────────────────────────────────────────
+      - name: "easierway"
+        label: "💡 Easier Way Section"
+        file: "src/content/easierway.json"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Heading Accent (red)", name: "heading_accent", widget: "string" }
+          - { label: "Body Paragraph 1", name: "body_p1", widget: "text" }
+          - { label: "Body Paragraph 2", name: "body_p2", widget: "text" }
+          - { label: "Body Paragraph 3", name: "body_p3", widget: "text" }
+          - { label: "CTA Button Text", name: "cta_text", widget: "string" }
+          - { label: "Social Proof Count (e.g. 800+)", name: "social_proof_count", widget: "string" }
+          - { label: "Social Proof Label", name: "social_proof_label", widget: "string" }
+          - label: "Carousel Cards (5)"
+            name: "carousel_cards"
+            widget: "list"
+            summary: "{{fields.label}}"
+            fields:
+              - { label: "Label (small tag)", name: "label", widget: "string" }
+              - { label: "Title (large text)", name: "title", widget: "string" }
+              - { label: "Label Color (hex)", name: "labelColor", widget: "string" }
+              - { label: "Card Background (CSS gradient)", name: "bg", widget: "string" }
+
+      # ─── SUCCESS STORIES ─────────────────────────────────────────────
+      - name: "successstories"
+        label: "🌟 Success Stories"
+        file: "src/content/successstories.json"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Heading Accent (red)", name: "heading_accent", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - label: "Column 1 Cards"
+            name: "col1"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Avatar Background (CSS gradient)", name: "avatarBg", widget: "string" }
+              - { label: "Quote", name: "quote", widget: "text" }
+          - label: "Column 2 Cards"
+            name: "col2"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Avatar Background (CSS gradient)", name: "avatarBg", widget: "string" }
+              - { label: "Quote", name: "quote", widget: "text" }
+          - label: "Column 3 Cards"
+            name: "col3"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Avatar Background (CSS gradient)", name: "avatarBg", widget: "string" }
+              - { label: "Quote", name: "quote", widget: "text" }
+          - label: "Column 4 Cards"
+            name: "col4"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Avatar Background (CSS gradient)", name: "avatarBg", widget: "string" }
+              - { label: "Quote", name: "quote", widget: "text" }
+
+      # ─── OLD VS NEW ──────────────────────────────────────────────────
+      - name: "oldvsnew"
+        label: "⚡ Old Way vs New Way"
+        file: "src/content/oldvsnew.json"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Heading Accent (red)", name: "heading_accent", widget: "string" }
+          - label: "Old Way Items"
+            name: "old_way"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+          - label: "New Way Items"
+            name: "new_way"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+
+      # ─── IS THIS COACHING FOR YOU ─────────────────────────────────────
+      - name: "isthiscoachingforyou"
+        label: "✅ Is This Mentorship For You"
+        file: "src/content/isthiscoachingforyou.json"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Heading Accent (red)", name: "heading_accent", widget: "string" }
+          - label: "FOR YOU — Items"
+            name: "for_items"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+          - label: "NOT FOR YOU — Items"
+            name: "not_for_items"
             widget: "list"
             field: { label: "Item", name: "item", widget: "string" }
 

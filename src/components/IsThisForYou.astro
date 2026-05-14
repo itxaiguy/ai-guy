@@ -1,18 +1,6 @@
 ---
-const audiences = [
-  {
-    title: "Housewives",
-    desc: "You want to earn from home without heavy investment, using only your phone and internet.",
-  },
-  {
-    title: "Students",
-    desc: "Turn your free time into extra monthly income by posting simple AI TikTok videos without ads, products, or clients.",
-  },
-  {
-    title: "Freelancers",
-    desc: "Stop depending on clients and deadlines. TikTok CRP gives you direct earnings with less stress and more consistency.",
-  },
-];
+import data from '../content/isthisforyou.json';
+const { tag, heading, subtitle, audiences } = data;
 ---
 
 <section class="bg-[#0a0a0a] pt-16 pb-20">
@@ -20,17 +8,17 @@ const audiences = [
 
     <!-- Tag -->
     <div class="flex justify-center mb-5">
-      <span class="is-this-you-tag">IS THIS YOU?</span>
+      <span class="is-this-you-tag">{tag}</span>
     </div>
 
     <!-- Heading -->
     <h2 class="font-['Oswald'] font-bold uppercase text-white text-center mb-4 leading-tight"
         style="font-size: clamp(2.8rem, 8vw, 4.5rem);">
-      WHO IS THIS FOR?
+      {heading}
     </h2>
 
     <!-- Subtitle -->
-    <p class="text-center text-gray-400 italic text-base mb-12">See if you can relate.</p>
+    <p class="text-center text-gray-400 italic text-base mb-12">{subtitle}</p>
 
     <!-- Cards -->
     <div class="flex flex-col lg:grid lg:grid-cols-3 gap-6">
